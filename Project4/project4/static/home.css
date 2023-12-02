@@ -1,6 +1,6 @@
 
 #header {
-   background-image:url("./project4/images/homepage.png");
+   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(./project4/images/pill1.jpg) center center no-repeat;
    background-size: cover;
    background-attachment: fixed;
    height: 100vh;
