@@ -5,41 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detection and Identification of Pills using Machine Learning Model</title>
-    <link rel="stylesheet" href="{% static '/predict.css' %}">
- 
+    <title>Predict</title>
+    <link rel="stylesheet", href="{% static 'prediction.css' %}">
 </head>
 <body>
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="mb-5">Upload Pills image</h1>
-            </div>
-            
-            <body>
-                           
-                        
-                          
-           
-                <form  method="POST" action="/upload" enctype="multipart/form-data">
-                  <input class="form-controls" type="file" name="img" accept="image/*" onchange="previewImage();" multiple />
-                </br>
-            </br>
-                 <center> <input class="btn btn-success" onclick="showAlert()" value="Submit"  type="submit" /></center>
-                </form>
-              </br>
-          </br>
-                  <div class="form-group">
-                     <form action="/predict">
-                        <center>  <input class="btn btn-success" type="submit" class="sub" value="Recognize" /></center>
-                     </form>
-                  </div>
-              
-              </body>
-          
-          
-            
-        </div>
+    <div class="container">
+        <h1 class="title"> Upload Pill Image</h1>
+    </div>
+
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+
+        <input class="upload-img" type="file" name="img" accept="image/*" onchange="previewImage();" multiple />
+        <br>
+        <!-- <input class="btn btn-success" onclick="showAlert()" value="Submit"  type="submit"> -->
+    </form>
+    <div class="form-group">
+        <form>
+            <input class="btn btn-success" type="submit" class="sub" value="Recognize">
+        </form>
+
     </div>
 </body>
 </html>
