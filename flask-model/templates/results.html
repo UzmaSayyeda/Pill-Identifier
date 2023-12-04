@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
-    <link rel="stylesheet", href="/static/css/results.css">
-
+    <link rel="stylesheet" href="../static/css/results.css">
 </head>
 <body>
     <h1>Results</h1>
 
-    <!-- {% for t in _trues %}
-    <br>
-        <div class="img-results">
-            <img src="{{ _trues }}" width="360" height="400"/>
+   
+    {% if filename %}
+        
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" width="360" height="400"/>
+    {% endif %}
 
+ 
+    {% for t in _trues %}
+        <br>
+        <div class="img-results">
+            <img src="{{ t }}" width="360" height="400"/>
+        </div>
     {% endfor %} 
-        </div> -->
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predict</title>
-    <link rel="stylesheet", href="/static/css/predict.css">
+    <link rel="stylesheet", href="../static/css/predict.css">
 
 </head>
 <body>
@@ -12,10 +12,11 @@
         <h1 class="title"> Upload Pill Image</h1>
     </div>
 
-    <form method="POST" action="/upload" enctype="multipart/form-data">
+    <form method="POST" action="/results" enctype="multipart/form-data">
 
-        <input class="upload-img" type="file" name="img" accept="image/*" onchange="previewImage();" multiple />
+        <input class="upload-img" type="file" name="img" accept="image/*"  multiple />
         <br>
+
     
     </form>
     <div class="form-group">
