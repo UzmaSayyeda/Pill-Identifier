@@ -1,0 +1,21 @@
+,name,Drug Class,Generic Name,Pill Name,Uses
+0,Amoxicillin 500 MG,Penicillin-like antibiotics, Amoxil,Amoxicillin 500 MG,Amoxicillin treats only bacterial infections. It will not work for viral infections.
+1,apixaban 2.5 MG,"Cardiovascular, Factor Xa Inhibitors",Eliquis,Apixaban 2.5 MG,Apixaban is an anticoagulant (blood thinner) that reduces blood clotting and reduces the risk of stroke 
+2,aprepitant 80 MG,NK1 Receptor Antagonists,Emend,Aprepitant 80 MG,Aprepitant is used with other medications to help prevent nausea and vomiting caused by cancer drug
+3,Atomoxetine 25 MG,Adrenergic uptake inhibitors for ADHD,Strattera,Atomoxetine 25 MG,"Atomoxetine is used to treat attention-deficit hyperactivity disorder (ADHD) as part of a total treatment plan, including psychological, social, and other treatments. It may help to increase the ability to pay attention, concentrate, stay focused, and stop fidgeting. It is thought to work by restoring the balance of certain natural substances (neurotransmitters) in the brain"
+4,benzonatate 100 MG,Antitussives,Tessalon,Penzonatate 100 MG,This medication is used to treat coughs caused by the common cold and other breathing problems
+5,Calcitriol 0.00025 MG,Vitamin D Analogs,Rocaltrol,Calcitriol 0.00025 MG,Calcitriol is a man-made active form of vitamin D. Most people get enough vitamin D
+6,carvedilol 3.125 MG,Beta-blocking agents,Coreg,Carvedilol 3.125 MG,Carvedilol is used to treat high blood pressure and heart failure.
+7,celecoxib 200 MG,NSAIDs,Celebrex,Celecoxib 200 MG,"This medication is a nonsteroidal anti-inflammatory drug (NSAID) and It is used to treat arthritis, acute pain and menstrual pain"
+8,duloxetine 30 MG,Selective serotonin and norepinephrine reuptake inhibitors (SNRIs),Cymbalta,Duloxetine 30 MG,"Duloxetine may improve your mood, sleep, appetite, and energy level, and decrease nervousness. It can also decrease pain due to certain medical conditions"
+9,eltrombopag 25 MG,Hematopoietic Growth Factors,Promacta,Eltrombopag 25 MG,This medication is used to treat low platelet levels in people who have a certain blood disorder
+10,montelukast 10 MG,Singulair,Leukotriene Receptor Antagonists,Montelukast 10 MG,Montelukast is used to control and prevent symptoms caused by asthma
+11,mycophenolate mofetil 250 MG,Immunosuppressants ,CellCept,Mycophenolate mofetil 250 MG,"Mycophenolate is used in combination with other medications to keep your body from attacking and rejecting your transplanted organ (such as kidney, liver, heart)"
+12,Oseltamivir 45 MG,Neuraminidase Inhibitors,Oseltamivir /Tamiflu,Oseltamivir 45 MG, Oseltamivir is used to treat symptoms caused by the flu virus (influenza)
+13,pantoprazole 40 MG,Proton Pump Inhibitors,Protonix,Pantoprazole 40 MG,Pantoprazole is used to treat certain stomach and esophagus problems 
+14,Pitavastatin 1 MG,Statins,Livalo ,Pitavastatin 1 MG,"Pitavastatin is used along with a proper diet to help lower ""bad"" cholesterol and fats (such as LDL, triglycerides) and raise ""good"" cholesterol (HDL) in the blood"
+15,prasugrel 10 MG, Antiplatelet Agents,Effient,prasugrel 10 MG,Prasugrel is used with aspirin by patients with heart disease. This medication helps to prevent other serious heart/blood vessel problems.
+16,Ramipril 5 MG,ACE Inhibitors,Altace,Ramipril 5 MG,Ramipril is used to treat high blood pressure
+17,saxagliptin 5 MG,Dipeptyl Peptidase-IV Inhibitors,Onglyza,Saxagliptin 5 MG,Saxagliptin is used with a proper diet and exercise program to control high blood sugar in people with type 2 diabetes
+18,sitagliptin 50 MG,"Antidiabetics, Insulins",Januvia,Sitagliptin 50 MG,Sitagliptin is used with a proper diet and exercise program and possibly with other medications to control high blood sugar
+19,tadalafil 5 MG,Phosphodiesterase (PDE) inhibitors,Cialis or Tadalafi,Tadalafil 5 MG,Tadalafil is used to treat male sexual function problems 

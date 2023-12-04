@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+    <link rel="stylesheet", href="/static/css/predict.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="title"> Upload Pill Image</h1>
+    </div>
+
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+
+        <input class="upload-img" type="file" name="img" accept="image/*" onchange="previewImage();" multiple />
+        <br>
+    
+    </form>
+    <div class="form-group">
+        <form action = "/results">
+            <input class="btn btn-success" type="submit" class="sub" value="Recognize">
+        </form>
+
+    </div>
+</body>
+</html>
