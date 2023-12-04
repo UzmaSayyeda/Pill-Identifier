@@ -8,20 +8,29 @@
 </head>
 <body>
 
-    <div  id = "header">
-        <div id="nav">
-            <a href=""></a>
-            <a href="{{ url_for('chart')}}" target="_blank">Chart</a>
+    <div id = "header">
+        <div class="logo">
+            <a href="#">The Pill Detective</a>
+
         </div>
-            
-        <h1 class="header-text">
-            Welcome to Pill Identifier
-        </h1>
-       
-        <form action = "predict">
-            <input type = "submit" value = "Let's go">
-        </form>
+            <div id="nav">
+                <li><a href="{{ url_for('chart')}}" target="_blank">Chart</a></li>
+                <li><a href="{{ url_for('predict')}}" target="_blank">Predictions</a></li>
+                <li><a href="{{ url_for('results')}}" target="_blank">Your Results</a></li>
+                <li><a href="#">Credits</a></li>
+        </div>
+
     </div>
+
+    <hr>
+
+    <h1 class="header-text">
+        Need to Identify a Pill?
+    </h1>
+   
+    <form action = "predict">
+        <input type = "submit" value = "Let's go">
+    </form>
 
 </body>
 </html>
