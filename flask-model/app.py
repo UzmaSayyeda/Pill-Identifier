@@ -109,10 +109,6 @@ def results():
 
     return render_template('results.html')
 
-@app.route('/charts')
-def chart():
-    return render_template('charts.html')
-
 @app.route('/update', methods=['POST'])
 def update():
     return render_template('home.html', img='static/P2.jpg')
