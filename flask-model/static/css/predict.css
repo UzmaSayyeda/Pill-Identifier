@@ -1,16 +1,19 @@
 html{
-    text-align: center;
+	text-align: center;
 }
 
 body{
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
-url(/static/images/pill7.jpg) center center no-repeat;
-   background-size: cover;
-   background-attachment: fixed;
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
+	url(/static/images/pill7.jpg) center center no-repeat;
+	   background-size: cover;
+	   background-attachment: fixed;
 }
 
-.title{
-    font-size: 60px;
+/* upload image */
+
+.mb-5{
+	text-align: center;
+	font-size: 60px;
     background-color: #a7c0d6;
     border-radius: 12px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -18,23 +21,15 @@ url(/static/images/pill7.jpg) center center no-repeat;
     width: fit-content;
     margin: auto;
     margin-bottom: 15px;
+	margin-top: 15px;
     border: none;
 }
 
-.upload-img{
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    background-color: #b99561;
-    display: inline-block;
-    margin: 15px;
-    text-align: center;
-    font-size: 25px;
-
-}
+/* submit and recognize button */
 
 .btn-success{
-    border-radius: 12px;
+	align-items: center;
+	border-radius: 12px;
     border: none;
     cursor: pointer;
     background-color: #b99561;
@@ -43,13 +38,10 @@ url(/static/images/pill7.jpg) center center no-repeat;
     font-size: 25px;
 }
 
-input:hover{
-    opacity: 0.8;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
- }
 
+/* nav bar style start */
 
- .logo {
+.logo {
 	margin: 0;
 	font-size: 1.5em;
 }
@@ -65,11 +57,12 @@ input:hover{
 	text-transform: uppercase;
 	text-align: center;
 	display: block;
-    text-decoration: none;
+	text-decoration: none;
+	color: black;
 }
 
 #nav a {
-	color: #000000;
+	color:black;
 	font-size: 1.5em;
 }
 
@@ -120,3 +113,5 @@ input:hover{
 	}
 
 }
+
+/* nav bar styel end */
