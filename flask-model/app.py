@@ -49,22 +49,22 @@ num = [0]
 
  
 
-with open('pills20.csv', 'r') as file:
-    reader = csv.reader(file)
-    pill_table = dict()
-    for i, row in enumerate(reader):
-        if i == 0:
-            name = ''
-            continue
-        else:
-            name = row[1].strip()
-        pill_table[name] = [
-            {'Drug Class': str(row[2])},
-            {'Generic Name': str(row[3])},
-            {'Pill Name': str(row[4])},
-            {'Uses': str(row[5])}
+# with open('pills20.csv', 'r') as file:
+#     reader = csv.reader(file)
+#     pill_table = dict()
+#     for i, row in enumerate(reader):
+#         if i == 0:
+#             name = ''
+#             continue
+#         else:
+#             name = row[1].strip()
+#         pill_table[name] = [
+#             {'Drug Class': str(row[2])},
+#             {'Generic Name': str(row[3])},
+#             {'Pill Name': str(row[4])},
+#             {'Uses': str(row[5])}
          
-        ]
+#         ]
 
 @app.route("/")
 @app.route("/home")
@@ -98,7 +98,7 @@ def upload():
     
     return render_template('predict.html', img=file)
 
-@app.route('/workingTitle')
+@app.route('/results')
 def results():
     # pack = []
     print('total image', num[0])
@@ -136,20 +136,7 @@ def results():
 
         pa['result'] = x
         print(x)
-        pa['nutrition'] = pill_table[_true]
-        pill=pill_table[_true]
-        print(pill_table[_true])
-        dict_str = str(pill)
-        dict_str = dict_str[1:-1]
-        text = ""
-        for dictionary in pill:
-            for key, value in dictionary.items():
-               text += f"{key}: {value}.. "
-               text = text[:-2] + "\n\n"   # Remove the last comma and add a newline
-
-        # ss= text[:-2] + "\n\n"
-        
-
+       
         pack[0].append(pa)
         passed[0] += 1
 

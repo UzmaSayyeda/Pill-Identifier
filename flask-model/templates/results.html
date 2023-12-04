@@ -15,7 +15,7 @@
         </div>
 
             <div id="nav">
-                <a href="{{ url_for('index')}}" target="_blank">Home</a>
+                <a href="{{ url_for('index')}}">Home</a>
                 <a href="{{ url_for('chart')}}" target="_blank">Chart</a>
                 <a href="{{ url_for('predict')}}" target="_blank">Predictions</a>
                 <a href="{{ url_for('credit')}}">Credits</a>
@@ -24,64 +24,41 @@
 
 
      <!-- Team Start -->
-     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-secondary text-uppercase">Detection and Identification of Pills</h6>
-                <h1 class="mb-5">Result</h1>
-            </div>
-            
-
-
-                       
-                        
-                        <body>
-                         
-                        
-                        <ul>
-                            <!-- <li><a class="active" href="/">Home</a></li> -->`
-                             
-                            <!-- <li><a href="#contact">联系</a></li>
-                            <li><a href="#about">关于</a></li> -->
-                        </ul>
-                        
-                        {% for p in pack %}
-                            <br/>
-                             
-                                <div class="container">
-                                    <div class="row">
-                                    </br>
-                               
-                                    <center>  <div class="col-sm-4">
-                                            <img src="{{ p.image }}" width="360" height="400" />
-                                        </div></center>
-                    
-                                        <div class="col-sm-4">
-                                            
-                                          
-                                        </div>
-                                        <div class="col-sm-4">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                             
-                        {% endfor %}
-                        <br/>
-                        <br/>
-					
-					<center>	<h2 class="qcont"><b> {{ prediction }} </b></h2> </center>
-                    
-                        <br/>
-                        <br/>
+    <div class="container-xxl py-5">
+            <h1 class="mb-5">Result</h1>
+    </div>                                                                   
+        
+        {% for p in pack %}
+            <br/>
                 
-                        </body>
-                    
-                        
+                <div class="container">
+                    <div class="row">
+                    </br>
+                
+                            <div class="col-sm-4">
+                            <img src="{{ p.image }}" width="360" height="400" />
+                        </div>
+    
+                        <div class="col-sm-4">
+                            
+                            
+                        </div>
+                        <div class="col-sm-4">
+                            
+                        </div>
+                    </div>
+                </div>
+                
+        {% endfor %}
+        <br/>
+        <br/>
+    
+        <h2 class="qcont"><b> {{ prediction }} </b></h2>
+    
+        <br/>
+        <br/>
 
-
-
-
+        
             
         </div>
     </div>
