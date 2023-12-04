@@ -107,12 +107,15 @@ def results():
             _true = label[top[2]]
             _trues = label[top[2]]
 
-            print(f"_true: {_true}")
-            print(f"_trues: {_trues}")
+    return render_template('results.html')
 
-            return render_template("results.html", filename=filename, _true=_true, _trues=_trues)
+@app.route('/charts')
+def chart():
+    return render_template('charts.html')
 
-    return render_template("results.html")
+@app.route('/update', methods=['POST'])
+def update():
+    return render_template('home.html', img='static/P2.jpg')
 
 
 if __name__ == "__main__":
