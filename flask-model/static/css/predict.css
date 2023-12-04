@@ -27,6 +27,19 @@ body{
 
 /* submit and recognize button */
 
+
+.form-controls{
+	align-items: center;
+	border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background-color: #b99561;
+    display: inline-block;
+    margin: 5px;
+    font-size: 25px;
+}	
+
+
 .btn-success{
 	align-items: center;
 	border-radius: 12px;

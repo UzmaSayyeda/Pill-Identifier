@@ -12,7 +12,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = 'static/uploads'
+UPLOAD_FOLDER = 'static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # define label meaning
@@ -84,39 +84,86 @@ def credit():
     return render_template('credits.html')
 
 
-@app.route("/results", methods=["GET", "POST"])
+@app.route('/upload', methods=['POST'])
+def upload():
+    file = request.files.getlist("img")
+    for f in file:
+        filename = secure_filename(str(num[0] + 500) + '.jpg')
+        num[0] += 1
+        name = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        print('save name', name)
+        f.save(name)
+
+    pack[0] = []
+    
+    return render_template('predict.html', img=file)
+
+@app.route('/workingTitle')
 def results():
-    print("taco")
-    if request.method == "POST":
-        file = request.files["img"]
-        if file:
-            filename = secure_filename(file.filename)
-            filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-            file.save(filepath)
+    # pack = []
+    print('total image', num[0])
+    for i in range(start[0], num[0]):
+        pa = dict()
 
-            # Debugging prints
-            print(f"File saved to: {filepath}")
+        filename = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
+        print('image filepath', filename)
+        pred_img = filename
+        pred_img = image.load_img(pred_img, target_size=(224, 224))
+        pred_img = image.img_to_array(pred_img)
+        pred_img = np.expand_dims(pred_img, axis=0)
+        pred_img = pred_img / 255.
 
-            pred_img = image.load_img(filepath, target_size=(224, 224))
-            pred_img = image.img_to_array(pred_img)
-            pred_img = np.expand_dims(pred_img, axis=0)
-            pred_img = pred_img / 255.
-            pred = model.predict(pred_img)
+        pred = model.predict(pred_img)
+        print("Pred")
+        print(pred)
 
-            if (
-                math.isnan(pred[0][0])
-                and math.isnan(pred[0][1])
-                and math.isnan(pred[0][2])
-                and math.isnan(pred[0][3])
-            ):
-                pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
+        if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
+                math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
+            pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
-            top = pred.argsort()[0][-3:]
-            label.sort()
-            _true = label[top[2]]
-            _trues = label[top[2]]
+        top = pred.argsort()[0][-3:]
+        label.sort()
+        _true = label[top[2]]
+        _trues = label[top[2]]
+        print(_trues)
+        pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
+        x = dict()
+        x[_true] = float("{:.2f}".format(pred[0][top[2]] * 100))
+        print(x[_true])
+        x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
+        print(x[label[top[1]]])
+        x[label[top[0]]] = float("{:.2f}".format(pred[0][top[0]] * 100))
 
-    return render_template('results.html')
+        pa['result'] = x
+        print(x)
+        pa['nutrition'] = pill_table[_true]
+        pill=pill_table[_true]
+        print(pill_table[_true])
+        dict_str = str(pill)
+        dict_str = dict_str[1:-1]
+        text = ""
+        for dictionary in pill:
+            for key, value in dictionary.items():
+               text += f"{key}: {value}.. "
+               text = text[:-2] + "\n\n"   # Remove the last comma and add a newline
+
+        # ss= text[:-2] + "\n\n"
+        
+
+        pack[0].append(pa)
+        passed[0] += 1
+
+    start[0] = passed[0]
+    print('successfully packed')
+    # compute the average source of calories
+     
+             
+
+    
+
+    return render_template('results.html', pack=pack[0], prediction = _trues)
+
+
 
 @app.route('/update', methods=['POST'])
 def update():
@@ -124,4 +171,21 @@ def update():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import click
+
+    @click.command()
+    @click.option('--debug', is_flag=True)
+    @click.option('--threaded', is_flag=True)
+    @click.argument('HOST', default='127.0.0.1')
+    @click.argument('PORT', default=5000, type=int)
+    def run(debug, threaded, host, port):
+        """
+        This function handles command line parameters.
+        Run the server using
+            python server.py
+        Show the help text using
+            python server.py --help
+        """
+        HOST, PORT = host, port
+        app.run(host=HOST, port=PORT, debug=debug, threaded=threaded)
+    run()

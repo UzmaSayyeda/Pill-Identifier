@@ -23,20 +23,67 @@
     </div>
 
 
-    <h1>Results</h1>
+     <!-- Team Start -->
+     <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">Detection and Identification of Pills</h6>
+                <h1 class="mb-5">Result</h1>
+            </div>
+            
 
-   
-    {% if filename %}
-        
-        <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" width="360" height="400"/>
-    {% endif %}
 
- 
-    {% for t in _trues %}
-        <br>
-        <div class="img-results">
-            <img src="{{ t }}" width="360" height="400"/>
+                       
+                        
+                        <body>
+                         
+                        
+                        <ul>
+                            <!-- <li><a class="active" href="/">Home</a></li> -->`
+                             
+                            <!-- <li><a href="#contact">联系</a></li>
+                            <li><a href="#about">关于</a></li> -->
+                        </ul>
+                        
+                        {% for p in pack %}
+                            <br/>
+                             
+                                <div class="container">
+                                    <div class="row">
+                                    </br>
+                               
+                                    <center>  <div class="col-sm-4">
+                                            <img src="{{ p.image }}" width="360" height="400" />
+                                        </div></center>
+                    
+                                        <div class="col-sm-4">
+                                            
+                                          
+                                        </div>
+                                        <div class="col-sm-4">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                        {% endfor %}
+                        <br/>
+                        <br/>
+					
+					<center>	<h2 class="qcont"><b> {{ prediction }} </b></h2> </center>
+                    
+                        <br/>
+                        <br/>
+                
+                        </body>
+                    
+                        
+
+
+
+
+            
         </div>
-    {% endfor %} 
-</body>
+    </div>
+    <!-- Team End -->
 </html>
