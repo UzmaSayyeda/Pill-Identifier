@@ -7,10 +7,17 @@
 
 </head>
 <body>
+
     <div  id = "header">
+        <div id="nav">
+            <a href=""></a>
+            <a href="{{ url_for('chart')}}" target="_blank">Chart</a>
+        </div>
+            
         <h1 class="header-text">
             Welcome to Pill Identifier
         </h1>
+       
         <form action = "predict">
             <input type = "submit" value = "Let's go">
         </form>

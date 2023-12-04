@@ -1,9 +1,13 @@
-#header{
+html{
+    text-align: center;
+}
+
+body{
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(/static/images/pill1.jpg) center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 100vh;
-    width: 100%;
+    /* height: 100vh;
+    width: 100%; */
 }
   
 h1 {
@@ -17,9 +21,18 @@ h1 {
     margin-bottom: 15px;
     border: none;
 }
-  
-div {
-    text-align: center;
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+    font-size: large;
 }
 
 input{

@@ -68,7 +68,7 @@ with open('pills20.csv', 'r') as file:
         ]
 
 @app.route("/")
-@app.route("/index")
+@app.route("/home")
 def index():
     return render_template('home.html')
 
