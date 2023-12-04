@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, flash,  jsonify
-from flask_cors import CORS
 import csv
 import math
 import os
@@ -12,8 +11,6 @@ from keras.layers import BatchNormalization
 import pandas as pd
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
-CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}}) 
 
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
