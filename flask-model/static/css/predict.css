@@ -48,31 +48,35 @@ input:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
  }
 
-/* .logo {
-    margin: 0;
-    font-size: 1.5em;
-} */
 
-#nav{
-    margin-top: 5px;
+ .logo {
+	margin: 0;
+	font-size: 1.5em;
 }
 
-.logo a {
-    padding: 10px 30px;
+#nav {
+	margin-top: 5px;
+
+}
+
+.logo a,
+#nav a {
+	padding: 10px 30px;
 	text-transform: uppercase;
 	text-align: center;
 	display: block;
+    text-decoration: none;
 }
 
-#nav a{
-    color: black;
-    font-size: 1.5em;
-    text-decoration: none;
+#nav a {
+	color: #000000;
+	font-size: 1.5em;
 }
 
 #nav a:hover {
 	color: #718daa;
 }
+
 
 #header {
 	padding-top: .5em;
@@ -85,4 +89,34 @@ input:hover{
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+	#header,
+	#nav {
+		display: flex;
+	}
+	#header {
+		flex-direction: column;
+		align-items: center;
+    	#header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	}
+
+}
+
+@media (min-width: 1025px) {
+	#header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
 }

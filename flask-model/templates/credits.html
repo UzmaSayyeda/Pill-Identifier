@@ -3,40 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
-    <link rel="stylesheet" href="../static/css/results.css">
+    <title>Credits</title>
+    <link rel="stylesheet" href="../static/css/credits.css">
 </head>
 <body>
-
-    <div id="header">
+    <div id = "header">
         <div class="logo">
             <img src="../static/images/Pill Logo 1.png" width="50" height="50">
             <a href="#">The Pill Detective</a>
         </div>
-
             <div id="nav">
                 <a href="{{ url_for('index')}}" target="_blank">Home</a>
                 <a href="{{ url_for('chart')}}" target="_blank">Chart</a>
                 <a href="{{ url_for('predict')}}" target="_blank">Predictions</a>
-                <a href="{{ url_for('credit')}}">Credits</a>
-            </div>
-    </div>
-
-
-    <h1>Results</h1>
-
-   
-    {% if filename %}
-        
-        <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" width="360" height="400"/>
-    {% endif %}
-
- 
-    {% for t in _trues %}
-        <br>
-        <div class="img-results">
-            <img src="{{ t }}" width="360" height="400"/>
+               
         </div>
-    {% endfor %} 
 </body>
 </html>

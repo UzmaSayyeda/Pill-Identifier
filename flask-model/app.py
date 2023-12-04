@@ -79,6 +79,10 @@ def predict():
 def chart():
 	return render_template('charts.html')
 
+@app.route("/credits")
+def credit():
+    return render_template('credits.html')
+
 
 @app.route("/results", methods=["GET", "POST"])
 def results():
