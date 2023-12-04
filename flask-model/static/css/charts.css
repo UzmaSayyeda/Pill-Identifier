@@ -14,6 +14,7 @@ img{
     opacity: 0.8;
 }
 
+
 h1{
     font-size: 30px;
     background-color: #a7c0d6;
@@ -22,4 +23,136 @@ h1{
     padding: 15px;
     width: fit-content;
     border: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* Added same nav bar to 'charts.css'*/
+
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+    /*font-size: large*/;
+}
+
+
+
+h1 {
+    font-size: 60px;
+    background-color: #a7c0d6;
+    border-radius: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    padding: 15px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 15px;
+    border: none;
+}
+
+
+
+/* "Let's Go" button */
+input{
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #f3d0aa;
+    padding: 25px;
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+input:hover{
+    opacity: 0.8;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.5em;
+}
+
+#nav {
+	margin-top: 5px;
+
+}
+
+.logo a,
+#nav a {
+	padding: 10px 30px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+#nav a {
+	color: #000000;
+	font-size: 1.5em;
+}
+
+#nav a:hover {
+	color: #718daa;
+}
+
+
+#header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f3d0aa;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+	#header,
+	#nav {
+		display: flex;
+	}
+	#header {
+		flex-direction: column;
+		align-items: center;
+    	#header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	}
+
+}
+
+@media (min-width: 1025px) {
+	#header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
 }
