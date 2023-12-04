@@ -75,6 +75,11 @@ def index():
 def predict():
     return render_template('predict.html')
 
+@app.route("/chart")
+def chart():
+	return render_template('charts.html')
+
+
 @app.route("/results", methods=["GET", "POST"])
 def results():
     print("taco")
