@@ -1,4 +1,6 @@
 
+
+
 .logo {
 	margin: 0;
 	font-size: 1.5em;
@@ -9,9 +11,6 @@
 
 }
 
-.logo a {
-    text-decoration: none;
-}
 
 .logo a,
 #nav a {
@@ -21,8 +20,14 @@
 	display: block;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+    /*font-size: large*/;
+}
+
 #nav a {
-	color: #000000;
+	color: white;
 	font-size: 1.5em;
     text-decoration: none;
 }
@@ -33,6 +38,10 @@
 
 
 #header {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
+    url(/static/images/pill10.jpg) center center no-repeat;
+       background-size: cover;
+       background-attachment: fixed;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
