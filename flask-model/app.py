@@ -1,5 +1,5 @@
-from flask import Flask, request, render_template
-from flask import Flask,flash, request, render_template
+from flask import Flask, request, render_template, flash,  jsonify
+from flask_cors import CORS
 import csv
 import math
 import os
@@ -12,6 +12,8 @@ from keras.layers import BatchNormalization
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}}) 
 
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -35,7 +37,7 @@ label = ['Amoxicillin 500 MG',
          'prasugrel 10 MG',
          'Ramipril 5 MG',
          'saxagliptin 5 MG',
-         'sitagliptin 50 MG',
+         'Sitagliptin 50 MG',
          'tadalafil 5 MG']
 
 # Loading the best saved model to make predictions.
@@ -76,37 +78,44 @@ def index():
 def predict():
     return render_template('predict.html')
 
-@app.route("/results")
+@app.route("/results", methods=["GET", "POST"])
 def results():
-    # if request.method == "POST":
-    #     file = request.files["files"]
-    #     if file:
-    #         filename = secure_filename(file.filename)
-    #         file.save(filename)
-    #     pred_img = image.load_img(filename, target_size=(224, 224))
-    #     pred_img = image.img_to_array(pred_img)
-    #     pred_img = np.expand_dims(pred_img, axis=0)
-    #     pred_img = pred_img / 255.
-    #     pred = model.predict(pred_img)
-        
-    #     if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
-    #             math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
-    #         pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
-            
-    #     top = pred.argsort()[0][-3:]
-    #     label.sort()
-    #     _true = label[top[2]]
-    #     _trues = label[top[2]]
+    print("taco")
+    if request.method == "POST":
+        file = request.files["img"]
+        if file:
+            filename = secure_filename(file.filename)
+            filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+            file.save(filepath)
 
-    return render_template('results.html')
+            # Debugging prints
+            print(f"File saved to: {filepath}")
 
-@app.route('/charts')
-def chart():
-    return render_template('charts.html')
+            pred_img = image.load_img(filepath, target_size=(224, 224))
+            pred_img = image.img_to_array(pred_img)
+            pred_img = np.expand_dims(pred_img, axis=0)
+            pred_img = pred_img / 255.
+            pred = model.predict(pred_img)
 
-@app.route('/update', methods=['POST'])
-def update():
-    return render_template('home.html', img='static/P2.jpg')
+            if (
+                math.isnan(pred[0][0])
+                and math.isnan(pred[0][1])
+                and math.isnan(pred[0][2])
+                and math.isnan(pred[0][3])
+            ):
+                pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
+
+            top = pred.argsort()[0][-3:]
+            label.sort()
+            _true = label[top[2]]
+            _trues = label[top[2]]
+
+            print(f"_true: {_true}")
+            print(f"_trues: {_trues}")
+
+            return render_template("results.html", filename=filename, _true=_true, _trues=_trues)
+
+    return render_template("results.html")
 
 
 if __name__ == "__main__":
