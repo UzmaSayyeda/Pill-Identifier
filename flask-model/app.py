@@ -50,6 +50,25 @@ passed = [0]
 pack = [[]]
 num = [0]
 
+ 
+
+# with open('pills20.csv', 'r') as file:
+#     reader = csv.reader(file)
+#     pill_table = dict()
+#     for i, row in enumerate(reader):
+#         if i == 0:
+#             name = ''
+#             continue
+#         else:
+#             name = row[1].strip()
+#         pill_table[name] = [
+#             {'Drug Class': str(row[2])},
+#             {'Generic Name': str(row[3])},
+#             {'Pill Name': str(row[4])},
+#             {'Uses': str(row[5])}
+         
+#         ]
+
 @app.route("/")
 @app.route("/home")
 def index():
@@ -77,6 +96,7 @@ def upload():
         name = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         print('save name', name)
         f.save(name)
+
     pack[0] = []
     
     return render_template('predict.html', img=file)
@@ -87,8 +107,10 @@ def results():
     pack = []
     x = dict()
     print('total image', num[0])
+        
     for i in range(start[0], num[0]):
         pa = dict()
+        x = dict()
 
         filename = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
         print('image filepath', filename)
@@ -108,23 +130,14 @@ def results():
             pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
         top = pred.argsort()[0][-3:]
-        print(top)
         # label.sort()
         _true = label[top[2]]
         _trues = label[top[2]]
         print(_trues)
+        print(label)
+        print(top[2])
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
-        
-     
-        x[_true] = float("{:.2f}".format(pred[0][top[2]] * 100))
-        print(x[_true])
-        x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
-        print(x[label[top[1]]])
-        x[label[top[0]]] = float("{:.2f}".format(pred[0][top[0]] * 100))
-
-        pa['result'] = x
-        print(x)
-        
+       
         pack[0].append(pa)
         passed[0] += 1
 
@@ -133,7 +146,7 @@ def results():
     # compute the average source of calories
      
 
-    return render_template('results.html', pack=pack[0], prediction = pred)
+    return render_template('results.html', pack=pack[0], prediction = _trues)
 
 
 
