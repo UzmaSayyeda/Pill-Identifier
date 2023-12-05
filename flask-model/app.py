@@ -17,25 +17,25 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # define label meaning
 label = ['Amoxicillin 500 MG',
-         'apixaban 2.5 MG',
-         'aprepitant 80 MG',
+         'Apixaban 2.5 MG',
+         'Aprepitant 80 MG',
          'Atomoxetine 25 MG',
-         'benzonatate 100 MG',
+         'Benzonatate 100 MG',
          'Calcitriol 0.00025 MG',
-         'carvedilol 3.125 MG',
-         'celecoxib 200 MG',
-         'duloxetine 30 MG',
-         'eltrombopag 25 MG',
-         'montelukast 10 MG',
-         'mycophenolate mofetil 250 MG',
+         'Carvedilol 3.125 MG',
+         'Celecoxib 200 MG',
+         'Duloxetine 30 MG',
+         'Eltrombopag 25 MG',
+         'Montelukast 10 MG',
+         'Mycophenolate mofetil 250 MG',
          'Oseltamivir 45 MG',
-         'pantoprazole 40 MG',
-         'pitavastatin 1 MG',
-         'prasugrel 10 MG',
+         'Pantoprazole 40 MG',
+         'Pitavastatin 1 MG',
+         'Prasugrel 10 MG',
          'Ramipril 5 MG',
-         'saxagliptin 5 MG',
+         'Saxagliptin 5 MG',
          'Sitagliptin 50 MG',
-         'tadalafil 5 MG']
+         'Tadalafil 5 MG']
 
 # Loading the best saved model to make predictions.
 tf.keras.backend.clear_session()
@@ -122,7 +122,7 @@ def results():
             pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
         top = pred.argsort()[0][-3:]
-        label.sort()
+        # label.sort()
         _true = label[top[2]]
         _trues = label[top[2]]
         print(_trues)
@@ -133,9 +133,6 @@ def results():
         x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
         print(x[label[top[1]]])
         x[label[top[0]]] = float("{:.2f}".format(pred[0][top[0]] * 100))
-
-        pa['result'] = x
-        print(x)
        
         pack[0].append(pa)
         passed[0] += 1
