@@ -16,26 +16,29 @@ UPLOAD_FOLDER = 'static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # define label meaning
-label = ['Amoxicillin 500 MG',
-         'apixaban 2.5 MG',
-         'aprepitant 80 MG',
-         'Atomoxetine 25 MG',
-         'benzonatate 100 MG',
-         'Calcitriol 0.00025 MG',
-         'carvedilol 3.125 MG',
-         'celecoxib 200 MG',
-         'duloxetine 30 MG',
-         'eltrombopag 25 MG',
-         'montelukast 10 MG',
-         'mycophenolate mofetil 250 MG',
-         'Oseltamivir 45 MG',
-         'pantoprazole 40 MG',
-         'pitavastatin 1 MG',
-         'prasugrel 10 MG',
+label = ['Amoxicillin 500 mg',
+         'Apixaban 2.5 mg',
+         'Aprepitant 80 mg',
+         'Atomoxetine 25 mg',
+         'Calcitriol 0.00025',
+         'Prasugrel 10 MG',
          'Ramipril 5 MG',
-         'saxagliptin 5 MG',
+         'Saxagliptin 5 MG',
          'Sitagliptin 50 MG',
-         'tadalafil 5 MG']
+         'Tadalafil 5 MG',
+         'carvedilol 3.125',
+         'celecoxib 200',
+         'duloxetine 30',
+         'eltrombopag 25',
+         'metformin_500',
+         'montelukast-10',
+         'mycophenolate-250',
+         'omeprazole_40',
+         'oseltamivir-45',
+         'pantaprazole-40',
+         'pitavastatin_1',
+         'prednisone_5',
+         'sertraline_25']
 
 # Loading the best saved model to make predictions.
 tf.keras.backend.clear_session()
@@ -80,7 +83,9 @@ def upload():
 
 @app.route('/results')
 def results():
-    # pack = []
+        
+    pack = []
+    x = dict()
     print('total image', num[0])
     for i in range(start[0], num[0]):
         pa = dict()
@@ -92,6 +97,7 @@ def results():
         pred_img = image.img_to_array(pred_img)
         pred_img = np.expand_dims(pred_img, axis=0)
         pred_img = pred_img / 255.
+        print(pred_img)
 
         pred = model.predict(pred_img)
         print("Pred")
@@ -102,12 +108,14 @@ def results():
             pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
         top = pred.argsort()[0][-3:]
-        label.sort()
+        print(top)
+        # label.sort()
         _true = label[top[2]]
         _trues = label[top[2]]
         print(_trues)
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
-        x = dict()
+        
+     
         x[_true] = float("{:.2f}".format(pred[0][top[2]] * 100))
         print(x[_true])
         x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
@@ -116,7 +124,7 @@ def results():
 
         pa['result'] = x
         print(x)
-       
+        
         pack[0].append(pa)
         passed[0] += 1
 
@@ -125,7 +133,7 @@ def results():
     # compute the average source of calories
      
 
-    return render_template('results.html', pack=pack[0], prediction = _trues)
+    return render_template('results.html', pack=pack[0], prediction = pred)
 
 
 
