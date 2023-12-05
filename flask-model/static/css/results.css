@@ -2,10 +2,7 @@ html{
     text-align: center;
 }
 
-/* body{
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),url(/static/images/pill9.jpg) center center no-repeat;
-} */
-
+/* title style */
 h1 {
     font-size: 60px;
     background-color: #a7c0d6;
@@ -19,6 +16,7 @@ h1 {
     border: none;
 }
 
+/* style nav bar */
 .logo {
 	margin: 0;
 	font-size: 1.5em;

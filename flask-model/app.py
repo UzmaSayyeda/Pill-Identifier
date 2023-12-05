@@ -103,9 +103,7 @@ def upload():
 
 @app.route('/results')
 def results():
-        
-    pack = []
-    x = dict()
+    # pack = []
     print('total image', num[0])
         
     for i in range(start[0], num[0]):
@@ -119,7 +117,6 @@ def results():
         pred_img = image.img_to_array(pred_img)
         pred_img = np.expand_dims(pred_img, axis=0)
         pred_img = pred_img / 255.
-        print(pred_img)
 
         pred = model.predict(pred_img)
         print("Pred")
@@ -145,6 +142,9 @@ def results():
     print('successfully packed')
     # compute the average source of calories
      
+             
+
+    
 
     return render_template('results.html', pack=pack[0], prediction = _trues)
 
