@@ -16,26 +16,29 @@ UPLOAD_FOLDER = 'static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # define label meaning
-label = ['Amoxicillin 500 MG',
-         'Apixaban 2.5 MG',
-         'Aprepitant 80 MG',
-         'Atomoxetine 25 MG',
-         'Benzonatate 100 MG',
-         'Calcitriol 0.00025 MG',
-         'Carvedilol 3.125 MG',
-         'Celecoxib 200 MG',
-         'Duloxetine 30 MG',
-         'Eltrombopag 25 MG',
-         'Montelukast 10 MG',
-         'Mycophenolate mofetil 250 MG',
-         'Oseltamivir 45 MG',
-         'Pantoprazole 40 MG',
-         'Pitavastatin 1 MG',
+label = ['Amoxicillin 500 mg',
+         'Apixaban 2.5 mg',
+         'Aprepitant 80 mg',
+         'Atomoxetine 25 mg',
+         'Calcitriol 0.00025',
          'Prasugrel 10 MG',
          'Ramipril 5 MG',
          'Saxagliptin 5 MG',
          'Sitagliptin 50 MG',
-         'Tadalafil 5 MG']
+         'Tadalafil 5 MG',
+         'carvedilol 3.125',
+         'celecoxib 200',
+         'duloxetine 30',
+         'eltrombopag 25',
+         'metformin_500',
+         'montelukast-10',
+         'mycophenolate-250',
+         'omeprazole_40',
+         'oseltamivir-45',
+         'pantaprazole-40',
+         'pitavastatin_1',
+         'prednisone_5',
+         'sertraline_25']
 
 # Loading the best saved model to make predictions.
 tf.keras.backend.clear_session()
@@ -102,8 +105,10 @@ def upload():
 def results():
     # pack = []
     print('total image', num[0])
+        
     for i in range(start[0], num[0]):
         pa = dict()
+        x = dict()
 
         filename = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
         print('image filepath', filename)
@@ -126,13 +131,9 @@ def results():
         _true = label[top[2]]
         _trues = label[top[2]]
         print(_trues)
+        print(label)
+        print(top[2])
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
-        x = dict()
-        x[_true] = float("{:.2f}".format(pred[0][top[2]] * 100))
-        print(x[_true])
-        x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
-        print(x[label[top[1]]])
-        x[label[top[0]]] = float("{:.2f}".format(pred[0][top[0]] * 100))
        
         pack[0].append(pa)
         passed[0] += 1
