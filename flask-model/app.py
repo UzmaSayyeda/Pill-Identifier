@@ -50,25 +50,6 @@ passed = [0]
 pack = [[]]
 num = [0]
 
- 
-
-# with open('pills20.csv', 'r') as file:
-#     reader = csv.reader(file)
-#     pill_table = dict()
-#     for i, row in enumerate(reader):
-#         if i == 0:
-#             name = ''
-#             continue
-#         else:
-#             name = row[1].strip()
-#         pill_table[name] = [
-#             {'Drug Class': str(row[2])},
-#             {'Generic Name': str(row[3])},
-#             {'Pill Name': str(row[4])},
-#             {'Uses': str(row[5])}
-         
-#         ]
-
 @app.route("/")
 @app.route("/home")
 def index():

@@ -1,6 +1,6 @@
 
-body{
-	
+html{
+	text-align: center;
 	background: url(../images/creds.jpg) center center no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -14,9 +14,7 @@ body{
 
 #nav {
 	margin-top: 5px;
-
 }
-
 
 .logo a,
 #nav a {
@@ -29,7 +27,6 @@ body{
 a{
     text-decoration: none;
     color: white;
-    /*font-size: large*/;
 }
 
 #nav a {

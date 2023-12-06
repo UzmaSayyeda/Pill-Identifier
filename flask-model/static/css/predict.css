@@ -1,15 +1,17 @@
+/*  */
 html{
 	text-align: center;
-}
-
-body{
 	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
 	url(../images/bg2.jpg) center center no-repeat;
-	   background-size: cover;
-	   background-attachment: fixed;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
-/* upload image */
+/* body{
+
+} */
+
+/* upload image title */
 
 .mb-5{
 	text-align: center;
