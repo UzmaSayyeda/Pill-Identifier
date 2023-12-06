@@ -4,7 +4,7 @@ html{
 
 body{
 	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
-	url(/static/images/pill7.jpg) center center no-repeat;
+	url(../images/bg2.jpg) center center no-repeat;
 	   background-size: cover;
 	   background-attachment: fixed;
 }
@@ -14,7 +14,7 @@ body{
 .mb-5{
 	text-align: center;
 	font-size: 60px;
-    background-color: #a7c0d6;
+    background-color: #5F6F52;
     border-radius: 12px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     padding: 15px;
@@ -33,22 +33,31 @@ body{
 	border-radius: 12px;
     border: none;
     cursor: pointer;
-    background-color: #b99561;
+    background-color: #5F6F52;
     display: inline-block;
     margin: 5px;
     font-size: 25px;
 }	
 
+.form-controls:hover{
+	opacity: 0.8;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+}
 
 .btn-success{
 	align-items: center;
 	border-radius: 12px;
     border: none;
     cursor: pointer;
-    background-color: #b99561;
+    background-color: #5F6F52;
     display: inline-block;
     margin: 5px;
     font-size: 25px;
+}
+
+.btn-success:hover{
+	opacity: 0.8;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
 }
 
 
@@ -85,10 +94,13 @@ body{
 
 
 #header {
+	/* background:  url(../images/pill1.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed; */
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #f3d0aa;
+	background-color: #BBAB8C;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);

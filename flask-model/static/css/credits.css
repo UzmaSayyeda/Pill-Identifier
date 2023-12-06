@@ -1,6 +1,10 @@
 
 body{
-    background-color: #bebfc1;
+	
+	background: url(../images/creds.jpg) center center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
 }
 
 .logo {
@@ -40,10 +44,9 @@ a{
 
 
 #header {
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
-    url(/static/images/pill10.jpg) center center no-repeat;
-       background-size: cover;
-       background-attachment: fixed;
+	background:  linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),url(../images/pill1.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;

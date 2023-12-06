@@ -43,7 +43,7 @@ label = ['Amoxicillin 500 mg',
 # Loading the best saved model to make predictions.
 tf.keras.backend.clear_session()
 model = tf.keras.models.load_model('MobileNet_02.keras')
-print('model successfully loaded!')
+# print('model successfully loaded!')
 
 start = [0]
 passed = [0]
@@ -122,16 +122,16 @@ def results():
         print("Pred")
         print(pred)
 
-        if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
-                math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
-            pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
+        # if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
+        #         math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
+        #     pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
         top = pred.argsort()[0][-3:]
         # label.sort()
-        _true = label[top[2]]
+        # _true = label[top[2]]
         _trues = label[top[2]]
         print(_trues)
-        print(label)
+        # print(label)
         print(top[2])
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
        
