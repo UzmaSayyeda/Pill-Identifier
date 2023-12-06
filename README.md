@@ -265,12 +265,11 @@ Pluggins used?
 ##### Presentation
 
   "Insert link to presentation slides here"
-  
+
 ##### References
-* Byeon, E. (2020, September 11). Exploratory data analysis ideas for image classification. Medium. https://towardsdatascience.com/exploratory-data-analysis-ideas-for-image-classification-d3fc6bbfb2d2
-* Centers for Disease Control and Prevention. (2019, October 18). CDC - Malaria - diagnosis & treatment (United States). Centers for Disease Control and Prevention. https://www.cdc.gov/malaria/diagnosis_treatment/index.html
-* Google. (n.d.). Google fonts. https://fonts.google.com/
-* Microscope photos, download the best free microscope stock ... - pexels. (n.d.). https://www.pexels.com/search/microscope/
-* Team, K. (n.d.). Keras Documentation: Transfer Learning &amp; Fine-tuning. https://keras.io/guides/transfer_learning/ 
-* Tian, Y. (2020, June 17). Integrating image and tabular data for Deep Learning. Medium. https://towardsdatascience.com/integrating-image-and-tabular-data-for-deep-learning-9281397c7318
+*
+*
+*
+*
+* 
 
