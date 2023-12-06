@@ -44,7 +44,7 @@ label = ['Amoxicillin 500 mg',
 # Loading the best saved model to make predictions.
 tf.keras.backend.clear_session()
 model = tf.keras.models.load_model('MobileNet_02.keras')
-print('model successfully loaded!')
+# print('model successfully loaded!')
 
 start = [0]
 passed = [0]
@@ -111,9 +111,11 @@ def results():
     
     print("Processing results...")
     print('total image', num[0])
-    
+        
     for i in range(start[0], num[0]):
         pa = dict()
+        x = dict()
+
         filename = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
         print('image filepath', filename)
         
@@ -132,34 +134,18 @@ def results():
         print("Pred")
         print(pred)
 
-        if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
-                math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
-            pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
+        # if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
+        #         math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
+        #     pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
         top = pred.argsort()[0][-3:]
         # label.sort()
-        
-        print("Top values:", top)
-        print("Label list size:", len(label))
-        
-        _true = label[top[2]]
-        x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
-        
+        # _true = label[top[2]]
         _trues = label[top[2]]
         print(_trues)
-        
+        # print(label)
+        print(top[2])
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
-        
-        _true = label[top[2]]
-        x[_true] = float("{:.2f}".format(pred[0][top[2]] * 100))
-        print(f"Prediction for label {_true}: {x[_true]}%")
-        
-        x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
-        print(x[label[top[1]]])
-        x[label[top[0]]] = float("{:.2f}".format(pred[0][top[0]] * 100))
-
-        pa['result'] = x
-        print(x)
        
         result_pack.append(pa)
         passed[0] += 1
