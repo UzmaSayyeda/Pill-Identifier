@@ -259,13 +259,13 @@ Pluggins used?
 * Describe here
 **By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
  
-  ![image](https://github.com/jnliou/project4/assets/15763802/fd8222cc-c4b3-4d18-b4f9-e9f6c61ef421)
+  
 
 
 ##### Presentation
 
-  [Presentation Slides](https://www.canva.com/design/DAFwuowNvz0/wqoWiCOmdgKINQC8cjHQyQ/view?utm_content=DAFwuowNvz0&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
-
+  "Insert link to presentation slides here"
+  
 ##### References
 * Byeon, E. (2020, September 11). Exploratory data analysis ideas for image classification. Medium. https://towardsdatascience.com/exploratory-data-analysis-ideas-for-image-classification-d3fc6bbfb2d2
 * Centers for Disease Control and Prevention. (2019, October 18). CDC - Malaria - diagnosis & treatment (United States). Centers for Disease Control and Prevention. https://www.cdc.gov/malaria/diagnosis_treatment/index.html
