@@ -9,6 +9,7 @@ from werkzeug.utils import secure_filename
 import tensorflow as tf
 from keras.layers import BatchNormalization
 import pandas as pd
+import logging 
 
 app = Flask(__name__)
 
@@ -84,7 +85,12 @@ def upload():
 
 @app.route('/results')
 def results():
-    # pack = []
+    result_pack = []
+    passed = [0]  # Assuming passed is a list
+    
+    x = dict()
+    
+    print("Processing results...")
     print('total image', num[0])
         
     for i in range(start[0], num[0]):
@@ -93,6 +99,12 @@ def results():
 
         filename = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
         print('image filepath', filename)
+        
+        if os.path.exists(filename):
+            print(f"File {filename} exists.")
+        else:
+            print(f"File {filename} does not exist.")
+        
         pred_img = filename
         pred_img = image.load_img(pred_img, target_size=(224, 224))
         pred_img = image.img_to_array(pred_img)
@@ -116,11 +128,12 @@ def results():
         print(top[2])
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
        
-        pack[0].append(pa)
+        result_pack.append(pa)
         passed[0] += 1
 
     start[0] = passed[0]
     print('successfully packed')
+    
     # compute the average source of calories
      
              
