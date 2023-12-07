@@ -74,7 +74,7 @@ The primary goal of this project is to utilize machine learning to analyze and i
 
 ## Project Management:
 
-
+We utilized a private canvas inside slack to organize the project management and timeline for individual task.
 
 ## Data Cleaning and Exploratory Data Analysis
 
