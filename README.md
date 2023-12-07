@@ -101,7 +101,7 @@ at a ratio=(.8, 0.1,0.1)
 
 ![EDA Header](<flask-model/local_drug_directory/Amoxicillin 500 mg/Amoxicillin_500_1024.jpg>)
 
-* [Jupyter Notebook Code for EDA](<EDA.ipynb>) 
+* [Jupyter Notebook Code for EDA](<flask-model/EDA.ipynb>) 
 
 ### Model Analysis
 
