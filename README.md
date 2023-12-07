@@ -52,17 +52,17 @@ The primary goal of this project is to utilize machine learning to analyze and i
 ## Programs Utilized:
 
 ### Backend 
-* Python: Matplotlib, Numpy, Pandas, Sklearn, Tensorflow, PIL, OS, CV2, boto3, Keras, Random, CV2, SplitFolders
+* Python: Matplotlib, Numpy, Pandas, Sklearn, Tensorflow, PIL, OS, boto3, Keras, Random, CV2, SplitFolders
 * Flask
 * SQLite
 * S3.Bucket
 * CSV Files
 
 ### Frontend
-* HTML/CSS: 
-* Javascript: Plotly
+* HTML 
+* Javascript
+* CSS
 
- 
 ### Other
 * GitHub
 * Discord
@@ -77,6 +77,11 @@ The primary goal of this project is to utilize machine learning to analyze and i
 We utilized a private canvas inside slack to organize the project management and timeline for individual task.
 
 ## Data Cleaning and Exploratory Data Analysis
+
+- The image files were downloaded from our S3 bucket into our local environment
+where they were classified into 23 seperate classifications.
+- The images were then displayed an inspected to make sure they were in the proper format.
+- They were then preprocessed and all resized to 224,224 to ensure consistency before being passed into the model.
 
 ### Data Preprocessing 
 * [Jupyter Notebook code for Data Preprocessing](<split_data_mobilenet.ipynb>)
@@ -126,6 +131,7 @@ We tried a few different machine learning models to figure out the best accuracy
 
 
 **A) [VGG16](<flask-model/optimization_models.ipynb>):**
+
 The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolutional neural network (CNN) architecture designed for image classification. It consists of 16 layers, including 13 convolutional layers and 3 fully connected layers. Our model was designed predicting the correct medication name an dosage based off an image of the medication. It constructs a new neural network model using the Sequential API from Keras, where the base model is added as the first layer, followed by a Global Average Pooling layer, and finally, a Dense layer with 23 units and softmax activation for multi-class classification.
 
 - **Training Dataset:**
@@ -164,6 +170,7 @@ The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolu
   - Loss Function: Categorical-Crossentropy.
   - Optimizer: Adam
   - Epochs: 2
+  - Batch Size: 1
   - Validation Split: 20% of the training data was used for validation during training to monitor model performance.
 
 - **Model Evaluation:**
