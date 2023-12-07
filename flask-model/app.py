@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, flash,  jsonify
-from flask_cors import CORS
 import csv
 import math
 import os
@@ -13,8 +12,6 @@ import pandas as pd
 import logging 
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
-CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
 
 UPLOAD_FOLDER = 'static/upload'

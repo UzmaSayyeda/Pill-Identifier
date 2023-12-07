@@ -1,7 +1,8 @@
 
 html{
 	text-align: center;
-	background: url(../images/creds.jpg) center center no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+				url(../images/creds.jpg) center center no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 
@@ -41,13 +42,10 @@ a{
 
 
 #header {
-	background:  linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),url(../images/pill1.jpg) center center no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #f3d0aa;
+	background-color: #017f68;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
@@ -55,6 +53,7 @@ a{
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+
 
 
 /* ================================= 

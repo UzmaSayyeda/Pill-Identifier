@@ -2,10 +2,11 @@
 /* and background image */
 
 html{
-    text-align: center;
-	background: url(../images/bg2.jpg) center center no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+	text-align: center;
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
+	url(../images/bg2.jpg) center center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 /* adds background image */
@@ -63,7 +64,7 @@ a{
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #BBAB8C;
+	background-color: #797777;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
