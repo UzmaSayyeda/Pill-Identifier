@@ -12,17 +12,18 @@
         <div class="logo">
             <img src="../static/images/Pill Logo 1.png" width="50" height="50">
             <a href="#">The Pill Detective</a>
+        <!-- nav bar start -->    
         </div>
             <div id="nav">
                 <a href="{{ url_for('index')}}">Home</a>
                 <a href="{{ url_for('chart')}}" target="_blank">Chart</a>
-                <a href="{{ url_for('predict')}}" target="_blank">Predictions</a>
                 <a href="{{ url_for('credit')}}">Credits</a>
         </div>
 
     </div>
-
-      
+    <!-- nav bar start -->
+    
+    <!-- upload image buttons -->
     <div>
         <h1 class="mb-5">Upload Pills image</h1>
     </div>
@@ -31,11 +32,12 @@
         <form  method="POST" action="/upload" enctype="multipart/form-data">
             <input class="form-controls" type="file" name="img" accept="image/*" multiple />
         </br>
-    
+        
+         <!-- submit image buttons -->
             <input class="btn btn-success" onclick="showAlert()" value="Submit"  type="submit" />
         </form>
 
-
+        <!-- recognize image buttons -->
         <form action="/results">
             <input class="btn btn-success" type="submit" class="sub" value="Recognize" />
         </form>

@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="../static/css/charts.css">
 </head>
 <body>
-
+    <!-- nav bar start -->
     <div id = "header">
         <div class="logo">
             <img src="../static/images/Pill Logo 1.png" width="50" height="50">
             <a href="#">The Pill Detective</a>
         </div>
             <div id="nav">
-                <a href="{{ url_for('index')}}" target="_blank">Home</a>
-                <a href="{{ url_for('predict')}}" target="_blank">Predictions</a>
+                <a href="{{ url_for('index')}}">Home</a>
+                <a href="{{ url_for('predict')}}">Predict</a>
                 <a href="{{ url_for('credit')}}">Credits</a>
         </div>
 
     </div>
-
+    <!-- nav bar end -->
+    <!-- chart starts -->
     <div class="conatiner">
       
         <div class="item">
@@ -32,5 +33,6 @@
             <img src="../static/images/accuracy.png" >
         </div>
     </div>
+    <!-- chart ends -->
 </body>
 </html>
