@@ -10,16 +10,17 @@ Feel free to view our [website](https/"our link here")
 
 1. [Pill Image recognition with Machine Learning](#pill-image-recognition-with-machine-learning) 
    1. [Introduction](#introduction)
-   2. [Team](#our-team)
-   3. [Programs Utilized](#programs-utilized)
-   4. [Dataset used](#dataset-used)
-   5. [Project Management](#project-management)
-   6. [Data Cleaning and Exploratory Data Analysis](#data-cleaning-and-exploratory-data-analysis)
+   2. [Why?](#why)
+   3. [Team](#our-team)
+   4. [Programs Utilized](#programs-utilized)
+   5. [Dataset used](#dataset-used)
+   6. [Project Management](#project-management)
+   7. [Data Cleaning and Exploratory Data Analysis](#data-cleaning-and-exploratory-data-analysis)
       1. [Data Preprocessing](#data-preprocessing)
       2. [Notes on the Data Cleaning/Preprocessing Process](#notes-on-the-data-cleaningpreprocessing-process)
-   7. [Exploratory Data Analysis](#exploratory-data-analysis)
-   8. [Model Analysis](#model-analysisgit )
-   9. [Machine Learning Models](#machine-learning-models)
+   8. [Exploratory Data Analysis](#exploratory-data-analysis)
+   9. [Model Analysis](#model-analysisgit )
+   10. [Machine Learning Models](#machine-learning-models)
 2. [FLASK](#flask)
    1. [Key Libraries Used](#key-libraries-used)
    2. [Backend Processes & AWS Integration](#backend-processes--aws-integration)
@@ -40,7 +41,22 @@ Feel free to view our [website](https/"our link here")
 
 ## Introduction
 
-The primary goal of this project is to utilize machine learning to analyze and identify pill images based off image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by "put info here". The primary intention behind this application is to "Put info here"
+The primary goal of this project is to utilize machine learning to analyze and identify pill images based off image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by people in the pharmaceutical profession as well as anyone who has to take medications regularly to help identify medications.
+
+## Why?
+
+- Medication Identification:
+  - Patient Safety: Pill recognition models can help patients verify and ensure they are taking the correct medication prescribed to them, reducing the risk of medication errors.
+  - Healthcare Professionals: Healthcare providers can use pill recognition for medication administration, particularly in busy hospital settings where multiple medications may be administered.
+
+- Preventing Medication Errors:
+  - Pill recognition can help prevent medication errors in healthcare settings, where different medications may have similar appearances. This is crucial for patient safety and adherence to treatment plans.
+
+- Telehealth and Remote Patient Monitoring:
+  - In telehealth scenarios, where patients are remotely monitored, pill recognition can assist healthcare professionals in tracking medication adherence and ensuring patients are following prescribed treatment plans.
+
+- Educational Tools:
+  - Pill recognition models can be integrated into educational tools for healthcare professionals, pharmacists, and patients to enhance their understanding of medications and improve medication management practices.
 
 ## Our team:
 * TJ Davis
