@@ -158,19 +158,17 @@
             },
         };
 
-        // Check if the prediction is in the list
-        if (pills.hasOwnProperty(prediction)) {
-            var pillInfo = pills[prediction];
-            document.write("<p>Pill Description: " + pillInfo.Description + "</p>");
-            document.write("<p>Possible Side Effects: " + pillInfo.PossibleEffects + "</p>");
-           
-        } else {
-            document.write("<p>No information available for this pill.</p>");
-           
-        }
-
-    </script>
-
+     // Check if the prediction is in the list
+    if (pills.hasOwnProperty(prediction)) {
+        var pillInfo = pills[prediction];
+        document.write("<div style='border: 2px solid #427D9D; border-radius: 12px; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); padding: 10px; width: fit-content; margin: auto; margin-bottom: 5px; margin-top: 15px; background-color: #427D9D;'>");
+        document.write("<p style='color: black; font-weight: bold;'>Pill Description: " + pillInfo.Description + "</p>");
+        document.write("<p style='color: black; font-weight: bold;'>Possible Side Effects: " + pillInfo.PossibleEffects + "</p>");
+        document.write("</div>");
+    } else {
+        document.write("<p style='border: 2px solid #427D9D; border-radius: 12px; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); padding: 10px; width: fit-content; margin: auto; margin-bottom: 5px; margin-top: 15px; background-color: #427D9D; color: black; font-weight: bold;'>No information is available for this pill.</p>");
+    }
+</script>
     
         
 
