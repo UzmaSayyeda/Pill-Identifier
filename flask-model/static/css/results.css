@@ -1,13 +1,13 @@
 /* aligns all items to center of the page */
 html{
     text-align: center;
-	scroll-behavior: smooth;
+	
 }
 
 /* background image */
 body{
     background: Linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-	url(../images/results2.jpg) center center no-repeat;
+	url(../images/resulst2.jpg) center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 	
@@ -72,7 +72,7 @@ a {
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #0050ae;
+	background-color: #017e83;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);

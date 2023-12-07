@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, flash,  jsonify
+from flask_cors import CORS
 import csv
 import math
 import os
@@ -9,9 +10,10 @@ from werkzeug.utils import secure_filename
 import tensorflow as tf
 from keras.layers import BatchNormalization
 import pandas as pd
-import logging 
 
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
 
 UPLOAD_FOLDER = 'static/upload'
@@ -45,12 +47,31 @@ label = ['Amoxicillin 500 mg',
 # Loading the best saved model to make predictions.
 tf.keras.backend.clear_session()
 model = tf.keras.models.load_model('MobileNet_02.keras')
-# print('model successfully loaded!')
+print('model successfully loaded!')
 
 start = [0]
 passed = [0]
 pack = [[]]
 num = [0]
+
+ 
+
+# with open('pills20.csv', 'r') as file:
+#     reader = csv.reader(file)
+#     pill_table = dict()
+#     for i, row in enumerate(reader):
+#         if i == 0:
+#             name = ''
+#             continue
+#         else:
+#             name = row[1].strip()
+#         pill_table[name] = [
+#             {'Drug Class': str(row[2])},
+#             {'Generic Name': str(row[3])},
+#             {'Pill Name': str(row[4])},
+#             {'Uses': str(row[5])}
+         
+#         ]
 
 @app.route("/")
 @app.route("/home")
@@ -86,12 +107,7 @@ def upload():
 
 @app.route('/results')
 def results():
-    result_pack = []
-    passed = [0]  # Assuming passed is a list
-    
-    x = dict()
-    
-    print("Processing results...")
+    # pack = []
     print('total image', num[0])
         
     for i in range(start[0], num[0]):
@@ -100,12 +116,6 @@ def results():
 
         filename = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
         print('image filepath', filename)
-        
-        if os.path.exists(filename):
-            print(f"File {filename} exists.")
-        else:
-            print(f"File {filename} does not exist.")
-        
         pred_img = filename
         pred_img = image.load_img(pred_img, target_size=(224, 224))
         pred_img = image.img_to_array(pred_img)
@@ -116,25 +126,29 @@ def results():
         print("Pred")
         print(pred)
 
-        # if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
-        #         math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
-        #     pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
+        if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
+                math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
+            pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
         top = pred.argsort()[0][-3:]
         # label.sort()
-        # _true = label[top[2]]
+        _true = label[top[2]]
         _trues = label[top[2]]
-        print(_trues)
-        # print(label)
-        print(top[2])
+        x[_true] = float("{:.2f}".format(pred[0][top[2]] * 100))
+        print(x[_true])
+        x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
+        print(x[label[top[1]]])
+        x[label[top[0]]] = float("{:.2f}".format(pred[0][top[0]] * 100))
+
+        pa['result'] = x
+        print(x)
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
        
-        result_pack.append(pa)
+        pack[0].append(pa)
         passed[0] += 1
 
     start[0] = passed[0]
     print('successfully packed')
-    
     # compute the average source of calories
      
              
