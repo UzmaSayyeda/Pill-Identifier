@@ -61,18 +61,16 @@ The primary goal of this project is to utilize machine learning to analyze and i
 ### Frontend
 * HTML/CSS: 
 * Javascript: Plotly
-* 
+
  
 ### Other
 * GitHub
 * Discord
-* Slack
-* 
-* 
+* Slack 
 
 ## Dataset used:
 * Downloadable from: [Pill Images](https://www.nlm.nih.gov/databases/download/pill_image.html)
-* 
+ 
 
 ## Project Management:
 
