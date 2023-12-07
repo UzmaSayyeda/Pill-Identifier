@@ -261,8 +261,6 @@ Pluggins used?
 * HTML and CSS have been employed to design the visuals and effects.
 ### Visualization: 
 * Matplotlib was used to generate accuracy and loss visuals
-### Styling & Fonts: 
-* Describe here
 ### Backend & Storage:
 * With Flask serving as our backend framework, we're efficiently reading data from our database.
 * AWS S3 has been our choice for storage. It allows us to select image names from the database and subsequently extract and display the relevant image files on the website.
