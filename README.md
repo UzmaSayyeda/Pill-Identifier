@@ -8,7 +8,7 @@ Feel free to view our [website](https/"our link here")
 
 # Table of Contents
 
-1. [Machine Learning Modelling on Malaria Cell Image Recognition](#machine-learning-modelling-on-malaria-cell-image-recognition)
+1. [Pill Image recognition with Machine Learning](#pill-image-recognition-with-machine-learning) 
    1. [Introduction](#introduction)
    2. [Team](#our-team)
    3. [Programs Utilized](#programs-utilized)
@@ -35,16 +35,20 @@ Feel free to view our [website](https/"our link here")
 4. [Presentation](#presentation)
 5. [References](#references)
 
+
+## Pill Image recognition with Machine Learning
+
+
 ## Introduction
 
 The primary goal of this project is to utilize machine learning to analyze and identify pill images based off image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by "put info here". The primary intention behind this application is to "Put info here"
 
 ## Our team:
-* TJ 
-* Uzma
-* Jonathan 
-* Evan
-* Yelemi
+* TJ Davis
+* Uzma Sayyeda
+* Jonathan Carmichael
+* Evan Michigan
+* Yelemi Lee
 
 ## Programs Utilized:
 
