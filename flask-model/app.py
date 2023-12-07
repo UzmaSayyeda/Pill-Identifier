@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, flash,  jsonify
+from flask_cors import CORS
 import csv
 import math
 import os
@@ -11,6 +12,9 @@ from keras.layers import BatchNormalization
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
+
 
 UPLOAD_FOLDER = 'static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -130,9 +134,14 @@ def results():
         # label.sort()
         _true = label[top[2]]
         _trues = label[top[2]]
-        print(_trues)
-        print(label)
-        print(top[2])
+        x[_true] = float("{:.2f}".format(pred[0][top[2]] * 100))
+        print(x[_true])
+        x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
+        print(x[label[top[1]]])
+        x[label[top[0]]] = float("{:.2f}".format(pred[0][top[0]] * 100))
+
+        pa['result'] = x
+        print(x)
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
        
         pack[0].append(pa)
