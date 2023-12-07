@@ -1,41 +1,32 @@
 
-/* body{
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(/static/images/pill8.jpg) center center no-repeat;
+html{
+	scroll-behavior: smooth;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
     background-size: cover;
     background-attachment: fixed;
-} */
-
-body{
-    background-color: #bebfc1;
 }
+
+/* body{
+    background-color: #bebfc1;
+} */
 
 .item{
     float: left;
     padding: 10px;
     width: 48.5%;
 }
-img{
-    opacity: 0.8;
-}
 
-
-h1{
+/* title for charts, might wanna remove them since the charts are titled */
+.item h1{
     font-size: 30px;
-    background-color: #a7c0d6;
+    background-color: #5F6F52;
     border-radius: 12px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     padding: 15px;
     width: fit-content;
     border: none;
+	text-align: center;
 }
-
-
-
-
-
-
-
-
 
 
 /* Added same nav bar to 'charts.css'*/
@@ -69,27 +60,6 @@ h1 {
 }
 
 
-
-/* "Let's Go" button */
-input{
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    background-color: #f3d0aa;
-    padding: 25px;
-    display: inline-block;
-    margin-top: 50px;
-    font-size: 25px;
-}
-
-input:hover{
-    opacity: 0.8;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
-}
-
-
-
 .logo {
 	margin: 0;
 	font-size: 1.5em;
@@ -119,16 +89,15 @@ input:hover{
 	color: #718daa;
 }
 
+.logo img{
+	text-align: center;
+}
 
 #header {
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
-    url(/static/images/pill2.jpg) center center no-repeat;
-       background-size: cover;
-       background-attachment: fixed;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #f3d0aa;
+	background-color: #797777;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
@@ -136,6 +105,7 @@ input:hover{
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+
 
 
 /* ================================= 

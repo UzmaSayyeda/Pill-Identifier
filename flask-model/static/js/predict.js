@@ -1,5 +1,5 @@
 // fucntion for alert pop after uploading picture.
 
 function showAlert() {
-    alert("Hit Recognize for results!");
-} 
+     alert("Hit Recognize for results!");
+ } 
