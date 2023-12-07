@@ -113,8 +113,6 @@ at a ratio=(.8, 0.1,0.1)
 * The validation directory used 46 images belonging to 23 classes
 
 
-
-
 ## Exploratory Data Analysis
 
 ![EDA Header](<flask-model/static/images/pills1234.JPG>)
