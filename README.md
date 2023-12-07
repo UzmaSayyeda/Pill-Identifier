@@ -119,107 +119,95 @@ The results of the various analyses were integrated into 4 DataFrames. 2 for the
 We tried a few different machine learning models to figure out the best accuracy for our end goal. 
 
 ### Machine Learning Models:
-EDA:
+
 | Model | Accuracy|
 |-----:|---------------|
-| Random Forest (RF) |   83%  |
-| Random Forest + hyperparameter |  89%  |
-| RF + Gradient Boosting       | 83%      |
-| Linear Regression Model      | 32%      |
-| SVC Model                    | 79%      |
-| SVC+Hyp                      | 85%      |
-| SVC + PCA                    | 79%      |
-| SVC+RF+NN                    | 81%      |
-| Decision Tree                | 74%     |
-
-IMAGE:
-| Model | Accuracy|
-|-----:|---------------|
-| CNN  |   94%  |
-| K-NN  |  60%|
-| Xception  |   80%  |
-| Xception Optimized  |  79%|
+| VGG16 |   83%  |
+| RestNet50 |  8%  |
+| MobileNet       | 100%      |
 
 
-**A) [CNN](<optimized_MLmodel.ipynb>):**
 
-The CNN model was designed for the classification of cell images into two categories: uninfected (0) and infected (1). It's aimed at assisting in the automated detection of infected cells, a task of significance in the detection of Malaria.
+**A) [VGG16](<flask-model/optimization_models.ipynb>):**
+The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolutional neural network (CNN) architecture designed for image classification. It consists of 16 layers, including 13 convolutional layers and 3 fully connected layers. Our model was designed predicting the correct medication name an dosage based off an image of the medication. It constructs a new neural network model using the Sequential API from Keras, where the base model is added as the first layer, followed by a Global Average Pooling layer, and finally, a Dense layer with 23 units and softmax activation for multi-class classification.
 
 - **Training Dataset:**
-  - Dataset Size: 1750 cell images.
+  - Dataset Size: 437 pill images.
   - Features: Each row in the dataset represents an image, with each pixel of the image treated as a feature.
   - Target Variable: The "Target" column indicates the class label, where 0 represents uninfected cells, and 1 represents infected cells.
 
 - **Data Preprocessing:**
-  - Image Resizing: All images were resized to a consistent size (not specified in the provided information) to ensure uniform input dimensions for the CNN.
-  - Normalization: Pixel values were scaled to a range of [0, 1] by dividing by the maximum pixel value (e.g., 255 for 8-bit images). This standardization helps improve convergence during training.
+  - Image Resizing: All images were resized to a consistent size  to ensure uniform input dimensions for the CNN.
+  
 
 - **Model Architecture:**
-  - The CNN model architecture used for cell image classification is as follows:
-    - Input Layer: Accepts images with dimensions (32, 25, 25, 3)
-    - Convolutional Layers: Three convolutional layers were employed with varying numbers of filters and filter sizes.
-    - Max-Pooling Layers: Max-pooling layers followed each convolutional layer to reduce spatial dimensions.
-    - Flatten Layer: The output from the final max-pooling layer was flattened into a 1D vector of length 16.
-    - Dense Layers: Two dense (fully connected) layers were used.
-    - Dropout Layer: A dropout layer with a dropout rate of 0.5 was added after the first dense layer to prevent overfitting.
+
+  - The same Model Architecture was used for each model.
+
+    - Base Model Integration:
+      The architecture starts with a pre-existing neural network model referred to as the "base model.
+    - Sequential Model Construction:
+      - For each tuple (name, base_model) in the base_models list:
+       -  A new Sequential model is created.
+          The base model is added as the first layer of the Sequential model.
+    - Layers Added to Sequential Model:
+        - Following the base model, the Sequential model has the following  layers added:
+          - Global Average Pooling 2D layer: This layer reduces the spatial dimensions of the data to a single value per feature map using global average pooling.
+          - Dense layer with 23 units and softmax activation: This layer is the output layer with 23 units, indicating a multi-class classification task with 23 classes. The softmax activation is commonly used for multi-class classification.
+    - Model Compilation:
+        - The model is compiled using the Adam optimizer, categorical crossentropy loss function (suitable for multi-class classification problems), and accuracy as the metric for evaluation.
+    - Model Training:
+        - The model is trained on a training data generator (train_generator) for 2 epochs.
+    - Model Evaluation:
+        - After training, the model is evaluated using a validation data generator (validation_generator), and the loss and accuracy are computed.
+    - DataFrame Creation:
+        - The results, including the model name, accuracy, and loss, are stored in lists (names, accuracy, and loss), and a pandas DataFrame (df) is created from these lists.
 
 - **Model Training:**
-  - Loss Function: Binary cross-entropy.
+  - Loss Function: Categorical-Crossentropy.
   - Optimizer: Adam
-  - Batch Size: 32
-  - Epochs: 50
+  - Epochs: 2
   - Validation Split: 20% of the training data was used for validation during training to monitor model performance.
 
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
-    - Accuracy: Measures the overall correctness of predictions. For this model, the accuracy was 94%.
+    - Accuracy: Measures the overall correctness of predictions. For this model, the accuracy was 83%.
 
-**B) [Random Forest](<Various_models.ipynb>):**
+**B) [RestNet50](<flask-model/optimization_models.ipynb>):**
 
-The EDA data was analyzed by a Random Forest model to predict if a cell was infected or not. The Random Forest model was tuned with hyperparameters, and the important features were identified.
+The ResNet-50 (Residual Network with 50 layers) is a convolutional neural network (CNN) architecture that was introduced by researchers at Microsoft Research in the paper titled "Deep Residual Learning for Image Recognition" in 2015. It is part of the ResNet family, which is known for its ability to train very deep networks by introducing residual blocks.
 
-- **Testing Data:**
-  - The testing dataset of 750 images that were not seen by the model was used to test the dataset. The model was used to predict infected and uninfected cells.
+- **Model Architecture:**
+      - Same as above
 
-- **Results:**
-  - The Random forest with hyperparameter tuning gave an accuracy of 89%.
+- **Model Training:**
+      - Same as above
 
-**C) [Xception](<xception.ipynb>):**
+- **Model Evaluation:**
+  - The model's performance was evaluated using common binary classification metrics, including:
+    - Accuracy: For base model was 8%. This Model performed the worst.
+
+**C) [MobileNet](<flask-model/optimization_models.ipynb>):**
+
+MobileNet is a family of lightweight neural network architectures designed for mobile and edge devices with limited computational resources. MobileNet models are often employed for various computer vision tasks, including image classification, object detection, and image segmentation on mobile and embedded devices. They are popular choices for applications such as real-time image processing, augmented reality, and mobile applications.
  
 - **Model Architecture:**
-      - Input Layer: Accepts images with dimensions (25, 25, 3)
-      - Base Model: Xception with pre-trained weights
-      - Input Layer: Accepts images with variable dimensions
-      - Convolutional and Separable Convolutional Layers
-      - Batch Normalization Layers
-      - Activation Layers
-      - Max-Pooling Layers
-      - Global Average Pooling Layer
-      - Two Dense (Fully Connected) Layers
-    - Output Layer: Dense layer with 1 neuron and sigmoid activation
-    - Freeze some layers in the base model to prevent them from being trained.
+      - Same as above
 
 - **Model Training:**
-  - Loss Function: Binary cross-entropy.
-  - Optimizer: Adam
-  - Batch Size: 32
-  - Epochs: 20 for base model and 10 for top model
-  - Validation Split: 20% of the training data was used for validation during training to monitor model performance.
+      - Same as above
 
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
-    - Accuracy: For base model was 78-80% while for top model was 77%. 
+  - Accuracy for MobilNet model was 100%. It was the best performing model.
 
-- This is a pre-trained model on the popular image dataset called `imagenet`. We built our base model using the pre-trained model and then added a layer of our own testing and training dataset to see how it performs. We got an accuracy of 79% over 20 epochs.
-- Model was fine-tuned by adding creating `top_model` on top of the `base_model` by feeding the output from the base model to the top model. It was interesting to notice that the accuracy did not change much but the loss had a significant difference. 
 
 - **Model Summary:**
     - Model architecture with detailed layer information for top model.
-    - Total parameters: 22,960,681 (87.59 MB)
-    - Trainable parameters: 2,099,201 (8.01 MB)
-    - Non-trainable parameters: 20,861,480 (79.58 MB)
-    - The graphs in `xception.ipynb` depict that the data was overfitting at certain points but the validation set performed better than the training data consistently. 
-    
+    - Total parameters: 14,726,847 (56.18 MB)
+    - Trainable parameters: 11,799 (46.09 KB)
+    - Non-trainable parameters: 14,714,688 (56.13 MB)
+        
 ## FLASK
 ### Key Libraries Used:
 
