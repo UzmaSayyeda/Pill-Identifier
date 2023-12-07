@@ -99,8 +99,8 @@ at a ratio=(.8, 0.1,0.1)
 
 ## Exploratory Data Analysis
 
-![EDA Header](<Dataset/EDA/EDA header.png>)
-"insert our image here"
+![EDA Header](<flask-model/local_drug_directory/Amoxicillin 500 mg/Amoxicillin_500_1024.jpg>)
+
 * [Jupyter Notebook Code for EDA](<EDA.ipynb>) 
 
 ### Model Analysis
