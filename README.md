@@ -220,7 +220,6 @@ MobileNet is a family of lightweight neural network architectures designed for m
 | Data Handling & Processing|   Numpy, Pandas |
 | Web Framework |  Flask  |
 | Storage & AWS Interaction|  Boto3, S3   |
-|  File Handling & Compression|  Zipfile, IO   |
 | Randomization| Random  |
 |  Database & ORM| SQLite, csv  |
 
