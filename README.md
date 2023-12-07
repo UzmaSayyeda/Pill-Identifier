@@ -92,7 +92,7 @@ where they were classified into 23 seperate classifications.
 * We downloaded the image files from the bucket and selected which consisted of 552 files
 * In Pyton using the splitfolders function we then split that into a training dataset and a validation dataset
 at a ratio=(.8, 0.1,0.1)
-* We preproccessed and scaled the images to 224/224/1
+* We preproccessed and scaled the images to 224/224
 * The training directory used 437 images belonging to 23 classes
 * The validation directory used 46 images belonging to 23 classes
 
