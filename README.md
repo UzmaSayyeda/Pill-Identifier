@@ -19,8 +19,7 @@ Feel free to view our [website](https/"our link here")
       2. [Notes on the Data Cleaning/Preprocessing Process](#notes-on-the-data-cleaningpreprocessing-process)
    7. [Exploratory Data Analysis](#exploratory-data-analysis)
    8. [Model Analysis](#model-analysisgit )
-   10. [Data Integration and Export](#data-integration-and-export)
-   11. [Machine Learning Models](#machine-learning-models)
+   9. [Machine Learning Models](#machine-learning-models)
 2. [FLASK](#flask)
    1. [Key Libraries Used](#key-libraries-used)
    2. [Backend Processes & AWS Integration](#backend-processes--aws-integration)
@@ -105,9 +104,9 @@ at a ratio=(.8, 0.1,0.1)
 
 ### Model Analysis
 
-* Model 1
-* Model 2
-* Model 3
+* VGG16
+* RestNet50
+* MobileNet
 
 
 ### Data Integration and Export
@@ -215,10 +214,10 @@ MobileNet is a family of lightweight neural network architectures designed for m
 |-----:|---------------|
 | Data Handling & Processing|   Numpy, Pandas |
 | Web Framework |  Flask  |
-| Storage & AWS Interaction|  Boto3   |
+| Storage & AWS Interaction|  Boto3, S3   |
 |  File Handling & Compression|  Zipfile, IO   |
 | Randomization| Random  |
-|  Database & ORM| SQLAlchemy, csv  |
+|  Database & ORM| SQLite, csv  |
 
 ### Backend Processes & AWS Integration:
 * To interact with our AWS storage, we generated pre-signed URLs from our S3 bucket name and key. This provides an API for Flask to retrieve image files.
@@ -241,7 +240,7 @@ Pluggins used?
 ### Front-end: 
 * HTML and CSS have been employed to design the visuals and effects.
 ### Visualization: 
-* Describe here
+* Matplotlib was used to generate accuracy and loss visuals
 ### Styling & Fonts: 
 * Describe here
 ### Backend & Storage:
