@@ -3,7 +3,6 @@ from flask_cors import CORS
 import csv
 import math
 import os
-import shutil
 import numpy as np
 from keras.preprocessing import image
 from tensorflow.python.keras.models import load_model
@@ -12,6 +11,7 @@ import tensorflow as tf
 from keras.layers import BatchNormalization
 import pandas as pd
 import atexit
+import shutil
 
 #SQL imports
 # from sqlalchemy import create_engine, Column, Integer, String, Date
@@ -172,14 +172,7 @@ def results():
 def update():
     return render_template('home.html', img='static/P2.jpg')
 
-def clearUpload(exception=None):
-    global UPLOAD_FOLDER
-    shutil.rmtree(UPLOAD_FOLDER)
-    os.mkdir(UPLOAD_FOLDER)
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-    
-atexit.register(clearUpload)
-    
+
 if __name__ == "__main__":
     import click
 
