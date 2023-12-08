@@ -10,6 +10,8 @@ from werkzeug.utils import secure_filename
 import tensorflow as tf
 from keras.layers import BatchNormalization
 import pandas as pd
+import sqlalchemy as sql
+import sqlite3
 
 #SQL imports
 # from sqlalchemy import create_engine, Column, Integer, String, Date
@@ -26,6 +28,10 @@ CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
 
 csv_path = 'Data/rximagesAll.csv'
+db_url = 'sqlite:///drugs.db'
+engine = sql.create_engine(db_url)
+
+
 
 
 UPLOAD_FOLDER = 'static/upload'
@@ -98,6 +104,16 @@ def chart():
     # df = pd.read_sql('SELECT * FROM rximagesAll', conn = engine.raw_connection())
     return render_template('charts.html')
 
+@app.route("/data")
+def get_data():
+    
+    conn = sqlite3.connect("drugs.db")
+    cursor = conn.cursor()
+    query = "SELECT * FROM drug_effects"
+    data = cursor.execute(query).fetchall()
+    conn.close()
+    return jsonify(data)
+
 @app.route("/credits")
 def credit():
     return render_template('credits.html')
@@ -133,7 +149,8 @@ def results():
         pred_img = image.load_img(filename, target_size=(224, 224))
         pred_img = image.img_to_array(pred_img)
         pred_img = np.expand_dims(pred_img, axis=0) / 255.
-
+        
+    #potential issue
         pred = model.predict(pred_img)
         print("Pred")
         print(pred)
@@ -191,3 +208,8 @@ if __name__ == "__main__":
         HOST, PORT = host, port
         app.run(host=HOST, port=PORT, debug=debug, threaded=threaded)
     run()
+    
+    
+    
+
+    
