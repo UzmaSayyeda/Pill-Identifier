@@ -134,7 +134,10 @@ We tried a few different machine learning models to figure out the best accuracy
 |-----:|---------------|
 | VGG16 |   83%  |
 | RestNet50 |  8%  |
+| EfficientNetV2B0 |  4%  |
+| DenseNet121 |  100%  |
 | MobileNet       | 100%      |
+
 
 
 
