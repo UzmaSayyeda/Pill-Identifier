@@ -18,6 +18,14 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
+
+csv_path = 'Data/rximagesAll.csv'
+db_url = 'sqlite:///drugs.db'
+engine = sql.create_engine(db_url)
+
+
+
+
 UPLOAD_FOLDER = 'static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -82,8 +90,6 @@ def predict():
 def chart():
     return render_template('charts.html')
 
-
-
 @app.route("/credits")
 def credit():
     return render_template('credits.html')
@@ -119,7 +125,8 @@ def results():
         pred_img = image.load_img(filename, target_size=(224, 224))
         pred_img = image.img_to_array(pred_img)
         pred_img = np.expand_dims(pred_img, axis=0) / 255.
-
+        
+    #potential issue
         pred = model.predict(pred_img)
         print("Pred")
         print(pred)
@@ -185,3 +192,8 @@ if __name__ == "__main__":
         HOST, PORT = host, port
         app.run(host=HOST, port=PORT, debug=debug, threaded=threaded)
     run()
+    
+    
+    
+
+    

@@ -82,7 +82,7 @@ a {
 }
 
 /* style for the printed results */
-h2{
+/* h2{
 	font-size: 1.5em;
 	background-color: #427D9D;
     border-radius: 12px;
@@ -93,7 +93,9 @@ h2{
     margin-bottom: 5px;
 	margin-top: 15px;
     border: none;
-}
+} */
+
+
 
 /* ================================= 
   Media Queries
