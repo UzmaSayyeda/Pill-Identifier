@@ -10,6 +10,8 @@ from werkzeug.utils import secure_filename
 import tensorflow as tf
 from keras.layers import BatchNormalization
 import pandas as pd
+import atexit
+import shutil
 
 #SQL imports
 # from sqlalchemy import create_engine, Column, Integer, String, Date
@@ -171,6 +173,14 @@ def results():
 def update():
     return render_template('home.html', img='static/P2.jpg')
 
+
+def clearUpload(exception=None):
+    global UPLOAD_FOLDER
+    shutil.rmtree(UPLOAD_FOLDER)
+    os.mkdir(UPLOAD_FOLDER)
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+atexit.register(clearUpload)
 
 if __name__ == "__main__":
     import click
