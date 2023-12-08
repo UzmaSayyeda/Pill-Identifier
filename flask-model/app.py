@@ -1,6 +1,7 @@
-from flask import Flask, request, render_template, flash,  jsonify
+from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
-import csv
+import sqlalchemy as sql
+
 import math
 import os
 import numpy as np
@@ -8,27 +9,17 @@ from keras.preprocessing import image
 from tensorflow.python.keras.models import load_model
 from werkzeug.utils import secure_filename
 import tensorflow as tf
-from keras.layers import BatchNormalization
-import pandas as pd
+
 import atexit
 import shutil
-
-#SQL imports
-from sqlalchemy import create_engine, Column, Integer, String, Date
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-
-# SQLite database path for pill predicitons
-db_path = 'sqlite:///Data/pill_predicitions.db'
-engine = create_engine(db_path)
+import sqlite3
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
-
-csv_path = 'Data/rximagesAll.csv'
-
+db_url = 'sqlite:///drugs.db'
+engine = sql.create_engine(db_url)
 
 UPLOAD_FOLDER = 'static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -68,28 +59,23 @@ passed = 0
 num = 0
 
  
-
-# with open('pills20.csv', 'r') as file:
-#     reader = csv.reader(file)
-#     pill_table = dict()
-#     for i, row in enumerate(reader):
-#         if i == 0:
-#             name = ''
-#             continue
-#         else:
-#             name = row[1].strip()
-#         pill_table[name] = [
-#             {'Drug Class': str(row[2])},
-#             {'Generic Name': str(row[3])},
-#             {'Pill Name': str(row[4])},
-#             {'Uses': str(row[5])}
-         
-#         ]
+db_url = 'sqlite:///drugs.db'
+engine = sql.create_engine(db_url)
 
 @app.route("/")
 @app.route("/home")
 def index():
     return render_template('home.html')
+
+@app.route("/data")
+def get_data():
+     
+    conn = sqlite3.connect("drugs.db")
+    cursor = conn.cursor()
+    query = "SELECT * FROM drug_effects"
+    data = cursor.execute(query).fetchall()
+    conn.close()
+    return jsonify(data)
 
 @app.route("/predict")
 def predict():
@@ -97,8 +83,7 @@ def predict():
 
 @app.route("/chart")
 def chart():
-    df = pd.read_sql('SELECT * FROM rximagesAll', conn = engine.raw_connection())
-    return render_template('charts.html', df)
+    return render_template('charts.html')
 
 @app.route("/credits")
 def credit():
@@ -168,7 +153,6 @@ def results():
     return render_template('results.html', pack=[pa], prediction = _trues)
 
 
-
 @app.route('/update', methods=['POST'])
 def update():
     return render_template('home.html', img='static/P2.jpg')
@@ -201,3 +185,8 @@ if __name__ == "__main__":
         HOST, PORT = host, port
         app.run(host=HOST, port=PORT, debug=debug, threaded=threaded)
     run()
+    
+    
+    
+
+    
