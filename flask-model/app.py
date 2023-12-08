@@ -163,10 +163,6 @@ def results():
     start[0] = passed[0]
     print('successfully packed')
     # compute the average source of calories
-     
-             
-
-    
 
     return render_template('results.html', pack=pack[0], prediction = _trues)
 
