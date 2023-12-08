@@ -4,8 +4,6 @@ The purpose of this project is to create an imaging tool that will be used to id
 # Using Machine Learning to Identify Pills
 ![Pills](<flask-model/static/images/bg2.jpg>)
 
-Feel free to view our [website](https/"our link here") 
-
 # Table of Contents
 
 1. [Pill Image recognition with Machine Learning](#pill-image-recognition-with-machine-learning) 
@@ -41,7 +39,7 @@ Feel free to view our [website](https/"our link here")
 
 ## Introduction
 
-The primary goal of this project is to utilize machine learning to analyze and identify pill images based off image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by people in the pharmaceutical profession as well as anyone who has to take medications regularly to help identify medications.
+The primary goal of this project is to utilize machine learning to analyze and identify pill images based off image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by people in the medical profession as well as anyone who has to take medications regularly to help identify medications.
 
 ## Why?
 
@@ -85,17 +83,17 @@ The primary goal of this project is to utilize machine learning to analyze and i
 * Slack 
 
 ## Dataset used:
-* Downloadable from: [Pill Images](https://www.nlm.nih.gov/databases/download/pill_image.html)
+* Downloadable from: [NIH Pill Images Database](https://www.nlm.nih.gov/databases/download/pill_image.html)
  
 
 ## Project Management:
 
-We utilized a private canvas inside slack to organize the project management and timeline for individual task.
+We utilized a private canvas inside of slack to organize the project management and timeline for individual and group task.
 
 ## Data Cleaning and Exploratory Data Analysis
 
 - The image files were downloaded from our S3 bucket into our local environment
-where they were classified into 23 seperate classifications.
+where they were organized into 23 seperate classifications.
 - The images were then displayed an inspected to make sure they were in the proper format.
 - They were then preprocessed and all resized to 224,224 to ensure consistency before being passed into the model.
 
@@ -117,19 +115,13 @@ at a ratio=(.8, 0.1,0.1)
 
 ![EDA Header](<flask-model/static/images/pills1234.JPG>)
 
-* [Jupyter Notebook Code for EDA](<flask-model/EDA.ipynb>) 
+* [Jupyter Notebook Code for EDA](<flask-model/optimization_models.ipynb>) 
 
 ### Model Analysis
 
 * VGG16
 * RestNet50
 * MobileNet
-
-
-### Data Integration and Export
-
-The results of the various analyses were integrated into 4 DataFrames. 2 for the training data: ```Dataset/eda_train_infect.csv```, ```Dataset/eda_train_uninfect.csv```, and two for the testing data: ```Dataset/eda_test_infect.csv```, ```Dataset/eda_test_uninfect.csv``` for further analysis and reference for useage on the ML model.
-
 
 **Building the Machine Learning**
 We tried a few different machine learning models to figure out the best accuracy for our end goal. 
@@ -252,8 +244,6 @@ MobileNet is a family of lightweight neural network architectures designed for m
 * SQLite Database: [pill_predictions.db](<flask-model/pill_predictions.db>)
 * SQL Database Generation: [sqlite.ipynb](<flask-model/sqlite.ipynb>)
 
-## Front End Development for User Integration
-Pluggins used? 
 
 ### Front-end: 
 * HTML and CSS have been employed to design the visuals and effects.
@@ -263,15 +253,9 @@ Pluggins used?
 * With Flask serving as our backend framework, we're efficiently reading data from our database.
 * AWS S3 has been our choice for storage. It allows us to select image names from the database and subsequently extract and display the relevant image files on the website.
 ### User Interaction: 
-* Describe here
-**By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
+
+* By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
  
-  
-
-
-##### Presentation
-
-  "Insert link to presentation slides here"
 
 ##### References
 *
