@@ -6,9 +6,11 @@ html{
 
 /* background image */
 body{
-	background:url(../images/results.jpg) center center no-repeat;
-	background-size: cover;
-	background-attachment: fixed;	
+    background: Linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+	url(../images/resulst2.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+	
 }
 
 

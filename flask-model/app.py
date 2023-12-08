@@ -11,9 +11,21 @@ import tensorflow as tf
 from keras.layers import BatchNormalization
 import pandas as pd
 
+#SQL imports
+# from sqlalchemy import create_engine, Column, Integer, String, Date
+# from sqlalchemy.orm import sessionmaker
+# from sqlalchemy.ext.declarative import declarative_base
+
+# SQLite database path for pill predicitons
+# db_path = 'sqlite:///Data/pill_predicitions.db'
+# engine = create_engine(db_path)
+
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
+
+
+csv_path = 'Data/rximagesAll.csv'
 
 
 UPLOAD_FOLDER = 'static/upload'
@@ -49,10 +61,9 @@ tf.keras.backend.clear_session()
 model = tf.keras.models.load_model('MobileNet_02.keras')
 print('model successfully loaded!')
 
-start = [0]
-passed = [0]
-pack = [[]]
-num = [0]
+start = 0
+passed = 0
+num = 0
 
  
 
@@ -84,7 +95,8 @@ def predict():
 
 @app.route("/chart")
 def chart():
-	return render_template('charts.html')
+    # df = pd.read_sql('SELECT * FROM rximagesAll', conn = engine.raw_connection())
+    return render_template('charts.html')
 
 @app.route("/credits")
 def credit():
@@ -95,67 +107,63 @@ def credit():
 def upload():
     file = request.files.getlist("img")
     for f in file:
-        filename = secure_filename(str(num[0] + 500) + '.jpg')
-        num[0] += 1
+        global num
+        filename = secure_filename(str(num + 500) + '.jpg')
+        num += 1
         name = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         print('save name', name)
         f.save(name)
-
-    pack[0] = []
     
     return render_template('predict.html', img=file)
 
 @app.route('/results')
 def results():
-    # pack = []
-    print('total image', num[0])
-        
-    for i in range(start[0], num[0]):
+    
+    global start
+    global passed
+    
+    print('total image', num)
+    
+    for i in range(start, num):
         pa = dict()
         x = dict()
 
         filename = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
         print('image filepath', filename)
-        pred_img = filename
-        pred_img = image.load_img(pred_img, target_size=(224, 224))
+        pred_img = image.load_img(filename, target_size=(224, 224))
         pred_img = image.img_to_array(pred_img)
-        pred_img = np.expand_dims(pred_img, axis=0)
-        pred_img = pred_img / 255.
+        pred_img = np.expand_dims(pred_img, axis=0) / 255.
 
         pred = model.predict(pred_img)
         print("Pred")
         print(pred)
 
+        # Error handling for if model returns NaNs
         if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
                 math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
+                    
+            # Arbitrarily set to list of probabilities. Should probably reset to reflect training data
             pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
         top = pred.argsort()[0][-3:]
-        # label.sort()
+        
         _true = label[top[2]]
         _trues = label[top[2]]
+        
         x[_true] = float("{:.2f}".format(pred[0][top[2]] * 100))
-        print(x[_true])
         x[label[top[1]]] = float("{:.2f}".format(pred[0][top[1]] * 100))
-        print(x[label[top[1]]])
         x[label[top[0]]] = float("{:.2f}".format(pred[0][top[0]] * 100))
 
         pa['result'] = x
         print(x)
         pa['image'] = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
        
-        pack[0].append(pa)
-        passed[0] += 1
+        passed += 1
 
-    start[0] = passed[0]
-    print('successfully packed')
-    # compute the average source of calories
-     
-             
+    start = passed         
+  
 
-    
-
-    return render_template('results.html', pack=pack[0], prediction = _trues)
+    return render_template('results.html', pack=[pa], prediction = _trues)
 
 
 
