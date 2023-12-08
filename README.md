@@ -122,6 +122,8 @@ at a ratio=(.8, 0.1,0.1)
 * VGG16
 * RestNet50
 * MobileNet
+* DenseNet121
+* EfficientNetV2B0
 
 **Building the Machine Learning**
 We tried a few different machine learning models to figure out the best accuracy for our end goal. 
@@ -217,6 +219,22 @@ MobileNet is a family of lightweight neural network architectures designed for m
     - Total parameters: 14,726,847 (56.18 MB)
     - Trainable parameters: 11,799 (46.09 KB)
     - Non-trainable parameters: 14,714,688 (56.13 MB)
+
+**D) [DenseNet121](<flask-model/optimization_models.ipynb>)
+
+DenseNet121 is a type of neural network architecture designed for computer vision tasks, especially image classification. It is a variant of the DenseNet architecture, and the "121" in its name refers to the total number of layers in the network
+
+- **Model Evaluation:**
+  - The model's performance was evaluated using common binary classification metrics, including:
+  - Accuracy for DenseNet121 model was 100%. with a loss of 0.09.
+
+**E) [EfficientNetV2B0](<flask-model/optimization_models.ipynb>)
+
+EfficientNetV2B0 is a variant of the EfficientNet family of neural network architectures designed for image classification tasks. It's part of a series of models developed to be computationally efficient while achieving high performance. 
+
+- **Model Evaluation:**
+  - The model's performance was evaluated using common binary classification metrics, including:
+  - Accuracy for DenseNet121 model was 4%. with a loss of 3.39. This model performed poorly and is not suitable for use to acccomplish the task.
         
 ## FLASK
 ### Key Libraries Used:
