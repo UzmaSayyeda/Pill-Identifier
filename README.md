@@ -241,7 +241,7 @@ EfficientNetV2B0 is a variant of the EfficientNet family of neural network archi
  * This is publicly available data so we made the S3 bucket public as well as we were not concerned with security for this application.
 ### User Interaction & Data Handling:
 * Flask plays a pivotal role in capturing user input data from our web game, which is temporarily stored in a global variable.
-* 
+
 ### API Creation:
 * Using Flask, we've set up API routes that output data in JSON format.
   
