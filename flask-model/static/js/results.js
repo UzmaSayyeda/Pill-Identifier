@@ -1,7 +1,6 @@
 
 
 // Get the prediction value and store it
-var prediction = "{{ prediction }}";
 
 
 // List of pills with descriptions and possible side effects
@@ -105,16 +104,15 @@ console.log("Prediction:", prediction);
 // Check if the prediction is in the list
 if (pills.hasOwnProperty(prediction)) {
     var pillInfo = pills[prediction];
-    var predictionElement = document.querySelector(".qcont b");
+    var pillHTML = "<div style='margin-top: 220px; border: 2px solid #427D9D; border-radius: 12px; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); padding: 10px; width: fit-content; margin: auto; background-color: #427D9D; color: black; font-weight: bold; opacity: 0.8;'>";
+    pillHTML += "<p>Pill Name: " + prediction + "</p>";
+    pillHTML += "<p>Uses: " + pillInfo.Description + "</p>";
+    pillHTML += "<p>Possible Side Effects: " + pillInfo.PossibleEffects + "</p>";
+    pillHTML += "</div>";
 
-    if (predictionElement) {
-        // Update the content of the prediction element
-        predictionElement.innerHTML = "<div style='border: 2px solid #427D9D; border-radius: 12px; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); padding: 10px; width: fit-content; margin: auto; margin-bottom: 5px; margin-top: 15px; background-color: #427D9D; color: black; font-weight: bold;'>" +
-            "<p>Pill Description: " + pillInfo.Description + "</p>" +
-            "<p>Possible Side Effects: " + pillInfo.PossibleEffects + "</p>" +
-            "</div>";
-    }
+    // Replace the content of predictionElement with the pillHTML
+    document.getElementById("predictionElement").innerHTML = pillHTML;
 } else {
-
-document.write("<p style='border: 2px solid #427D9D; border-radius: 12px; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); padding: 10px; width: fit-content; margin: auto; margin-bottom: 5px; margin-top: 15px; background-color: #427D9D; color: black; font-weight: bold;'>No information is available for this pill.</p>");
+    // Display a message if the prediction is not in the list
+    document.write("<p>No information is available for this pill.</p>");
 }
