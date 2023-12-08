@@ -180,6 +180,8 @@ def clearUpload(exception=None):
     os.mkdir(UPLOAD_FOLDER)
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+atexit.register(clearUpload)
+
 if __name__ == "__main__":
     import click
 
