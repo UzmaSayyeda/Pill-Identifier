@@ -14,13 +14,13 @@ import atexit
 import shutil
 
 #SQL imports
-# from sqlalchemy import create_engine, Column, Integer, String, Date
-# from sqlalchemy.orm import sessionmaker
-# from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine, Column, Integer, String, Date
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 # SQLite database path for pill predicitons
-# db_path = 'sqlite:///Data/pill_predicitions.db'
-# engine = create_engine(db_path)
+db_path = 'sqlite:///Data/pill_predicitions.db'
+engine = create_engine(db_path)
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
@@ -97,8 +97,8 @@ def predict():
 
 @app.route("/chart")
 def chart():
-    # df = pd.read_sql('SELECT * FROM rximagesAll', conn = engine.raw_connection())
-    return render_template('charts.html')
+    df = pd.read_sql('SELECT * FROM rximagesAll', conn = engine.raw_connection())
+    return render_template('charts.html', df)
 
 @app.route("/credits")
 def credit():
