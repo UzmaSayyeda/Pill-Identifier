@@ -1,28 +1,22 @@
+/* aligns text to center for enitre page  */
+/* and background image */
+
 html{
-    text-align: center;
+	text-align: center;
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),      
+	url(../images/bg2.jpg) center center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
-body{
-    background: url(../images/bg2.jpg) center center no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+/* adds background image */
+/* body{
+   
 	
-}
+} */
 
 
-
-
-h1 {
-    font-size: 60px;
-    background-color: #427D9D;
-    border-radius: 12px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    padding: 15px;
-    width: fit-content;
-    margin: auto;
-    margin-bottom: 15px;
-    border: none;
-}
+/*  nav bar styling */
 
 #nav{
     display: flex;
@@ -31,29 +25,11 @@ h1 {
     flex-wrap: wrap;
 }
 
+/* remove underline from text */
 a{
     text-decoration: none;
     color: white;
 }
-
-input{
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    background-color: #427D9D;
-    padding: 25px;
-    display: inline-block;
-    margin-top: 50px;
-    font-size: 25px;
-}
-
-input:hover{
-    opacity: 0.8;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
-}
-
-
 
 .logo {
 	margin: 0;
@@ -83,11 +59,12 @@ input:hover{
 }
 
 
+
 #header {
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #BBAB8C;
+	background-color: #797777;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
@@ -96,6 +73,37 @@ input:hover{
 	border-radius: 5px;
 }
 
+/* style for the title */
+
+h1 {
+    font-size: 60px;
+    background-color: #427D9D;
+    border-radius: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    padding: 15px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 15px;
+    border: none;
+}
+
+/* style for the button */
+input{
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #427D9D;
+    padding: 25px;
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+input:hover{
+    opacity: 0.8;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+}
 
 /* ================================= 
   Media Queries

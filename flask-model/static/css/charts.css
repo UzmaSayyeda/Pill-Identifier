@@ -1,5 +1,6 @@
 
-body{
+html{
+	scroll-behavior: smooth;
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
     background-size: cover;
     background-attachment: fixed;
@@ -15,7 +16,7 @@ body{
     width: 48.5%;
 }
 
-
+/* title for charts, might wanna remove them since the charts are titled */
 .item h1{
     font-size: 30px;
     background-color: #5F6F52;
@@ -26,7 +27,6 @@ body{
     border: none;
 	text-align: center;
 }
-
 
 
 /* Added same nav bar to 'charts.css'*/
@@ -94,13 +94,10 @@ h1 {
 }
 
 #header {
-	/* background:  linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),url(../images/pill1.jpg) center center no-repeat;
-    background-size: cover;
-    background-attachment: fixed; */
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #BBAB8C;
+	background-color: #797777;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
@@ -108,6 +105,7 @@ h1 {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+
 
 
 /* ================================= 
