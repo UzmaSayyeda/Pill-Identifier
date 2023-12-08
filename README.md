@@ -138,13 +138,6 @@ We tried a few different machine learning models to figure out the best accuracy
 | DenseNet121 |  100%  |
 | MobileNet       | 100%      |
 
-
-
-
-**A) [VGG16](<flask-model/optimization_models.ipynb>):**
-
-The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolutional neural network (CNN) architecture designed for image classification. It consists of 16 layers, including 13 convolutional layers and 3 fully connected layers. Our model was designed predicting the correct medication name an dosage based off an image of the medication. It constructs a new neural network model using the Sequential API from Keras, where the base model is added as the first layer, followed by a Global Average Pooling layer, and finally, a Dense layer with 23 units and softmax activation for multi-class classification.
-
 - **Training Dataset:**
   - Dataset Size: 437 pill images.
   - Features: Each row in the dataset represents an image, with each pixel of the image treated as a feature.
@@ -184,6 +177,16 @@ The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolu
   - Batch Size: 1
   - Validation Split: 20% of the training data was used for validation during training to monitor model performance.
 
+- **Model Summary:**
+    - Model architecture with detailed layer information for top model.
+    - Total parameters: 14,726,847 (56.18 MB)
+    - Trainable parameters: 11,799 (46.09 KB)
+    - Non-trainable parameters: 14,714,688 (56.13 MB)
+
+**A) [VGG16](<flask-model/optimization_models.ipynb>):**
+
+The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolutional neural network (CNN) architecture designed for image classification. It consists of 16 layers, including 13 convolutional layers and 3 fully connected layers. Our model was designed predicting the correct medication name an dosage based off an image of the medication. It constructs a new neural network model using the Sequential API from Keras, where the base model is added as the first layer, followed by a Global Average Pooling layer, and finally, a Dense layer with 23 units and softmax activation for multi-class classification.
+
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
     - Accuracy: Measures the overall correctness of predictions. For this model, the accuracy was 83%.
@@ -192,36 +195,19 @@ The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolu
 
 The ResNet-50 (Residual Network with 50 layers) is a convolutional neural network (CNN) architecture that was introduced by researchers at Microsoft Research in the paper titled "Deep Residual Learning for Image Recognition" in 2015. It is part of the ResNet family, which is known for its ability to train very deep networks by introducing residual blocks.
 
-- **Model Architecture:**
-      - Same as above
-
-- **Model Training:**
-      - Same as above
-
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
     - Accuracy: For base model was 8%. This Model performed the worst.
+
 
 **C) [MobileNet](<flask-model/optimization_models.ipynb>):**
 
 MobileNet is a family of lightweight neural network architectures designed for mobile and edge devices with limited computational resources. MobileNet models are often employed for various computer vision tasks, including image classification, object detection, and image segmentation on mobile and embedded devices. They are popular choices for applications such as real-time image processing, augmented reality, and mobile applications.
  
-- **Model Architecture:**
-      - Same as above
-
-- **Model Training:**
-      - Same as above
-
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
   - Accuracy for MobilNet model was 100%. It was the best performing model.
 
-
-- **Model Summary:**
-    - Model architecture with detailed layer information for top model.
-    - Total parameters: 14,726,847 (56.18 MB)
-    - Trainable parameters: 11,799 (46.09 KB)
-    - Non-trainable parameters: 14,714,688 (56.13 MB)
 
 **D) [DenseNet121](<flask-model/optimization_models.ipynb>):**
 
