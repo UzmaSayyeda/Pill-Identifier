@@ -66,16 +66,24 @@ engine = sql.create_engine(db_url)
 @app.route("/home")
 def index():
     return render_template('home.html')
-
+     
 @app.route("/data")
 def get_data():
-     
     conn = sqlite3.connect("drugs.db")
     cursor = conn.cursor()
     query = "SELECT * FROM drug_effects"
-    data = cursor.execute(query).fetchall()
+    data_two = cursor.execute(query).fetchall()
+
+
+    drug_data_two = []
+    for row in data_two:
+        row_dict = {}
+        for i, column in enumerate(cursor.description):
+            row_dict[column[0]] = row[i]
+        drug_data_two.append(row_dict)
+
     conn.close()
-    return jsonify(data)
+    return jsonify(drug_data_two)
 
 @app.route("/predict")
 def predict():

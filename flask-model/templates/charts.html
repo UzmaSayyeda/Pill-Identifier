@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charts</title>
     <link rel="stylesheet" href="../static/css/charts.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../static/js/index.js"></script>
 </head>
 <body>
     <!-- nav bar start -->
@@ -36,7 +39,7 @@
             <img src="../static/images/accuracy.png" >
         </div>
     </div>
-    <div class="plotly-charts"></div>
+    <canvas id="myChart" width="400" height="400"></canvas>
     <!-- chart ends -->
 </body>
 </html>
