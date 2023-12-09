@@ -28,6 +28,12 @@ html{
 	text-align: center;
 }
 
+#myChart{
+	float: left;
+    padding: 10px;
+    width: 48.5%;
+}
+
 
 /* Added same nav bar to 'charts.css'*/
 
