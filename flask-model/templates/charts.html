@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charts</title>
     <link rel="stylesheet" href="../static/css/charts.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../static/js/index.js"></script>
 </head>
 <body>
     <!-- nav bar start -->
@@ -22,7 +26,7 @@
     </div>
     
     <hr>
-
+    
     <!-- nav bar end -->
     <!-- chart starts -->
     <div class="conatiner">
@@ -35,7 +39,14 @@
             <!-- <h1>Training Accuracy</h1> -->
             <img src="../static/images/accuracy.png" >
         </div>
+
+        <div id="view-1"></div>
+        <div id="view-2"></div>
+        <div id="view-3"></div>
     </div>
+
+    
     <!-- chart ends -->
+   
 </body>
 </html>

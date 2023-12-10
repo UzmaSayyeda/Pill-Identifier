@@ -28,6 +28,24 @@ html{
 	text-align: center;
 }
 
+#view-1{
+	float: left;
+    padding: 10px;
+	width: 48.5%;
+}
+
+#view-2{
+	float: left;
+    padding: 10px;
+	width: 48.5%;
+}
+
+#view-3{
+	float: left;
+    padding: 10px;
+	width: 48.5%;
+}
+
 
 /* Added same nav bar to 'charts.css'*/
 
