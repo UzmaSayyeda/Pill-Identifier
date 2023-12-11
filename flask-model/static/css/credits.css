@@ -1,8 +1,6 @@
 
 html{
 	text-align: center;
-	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-				url(../images/creds.jpg) center center no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 
@@ -26,7 +24,7 @@ html{
 	display: block;
 }
 
-a{
+#header a{
     text-decoration: none;
     color: white;
 	font-weight: 500;
@@ -49,7 +47,7 @@ a{
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #017f68;
+	background-color: #427D9D;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
@@ -63,10 +61,10 @@ a{
 /* body style */
 
 .team-title{
+	color: white;
 	font-size: 40px;
     background-color: #427D9D;
     border-radius: 12px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     padding: 15px;
     width: fit-content;
     margin: auto;
@@ -79,7 +77,6 @@ a{
 	
     background-color: #427D9D;
     border-radius: 12px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     padding: 10px;
     width: fit-content;
     margin: auto;
@@ -87,13 +84,14 @@ a{
 	margin-bottom: 15px;
     border: none;
 	font-family: 'Verdana', sans-serif;
+	color: white;
 }
 
 .overview-title{
+	color: white;
 	font-size: 30px;
     background-color: #427D9D;
     border-radius: 12px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     padding: 10px;
     width: fit-content;
     margin: auto;
@@ -113,7 +111,6 @@ a{
 
 .name{
 	border-radius: 12px;
-	background:#017f68;
 	opacity: 0.8;
 	padding: 5px;
 	text-align: center;
@@ -141,8 +138,10 @@ a{
 
 .items:hover {
 	transform: scale(1.1);
-	background: rgba(225,225,225,0.61);
+	/* background: rgba(225,225,225,0.61); */
+	background: rgb(82, 155, 195, 0.61);
 	color: #000000;
+	border-radius: 12px;
 }
 
 .icons {
@@ -157,7 +156,7 @@ a{
 }
 
 .icons i:hover {
-	color: #017f68;
+	color: #427D9D;
 	transform: scale(1.2);
 	animation: shake 0.5s ease-in-out forwards;
 }
@@ -189,15 +188,15 @@ a{
 
 .ov-para{
 	display: grid;
-	background-color: #a2a2a2;
 	font-size: large;
 	box-sizing: border-box;
 	align-items: center;
 	text-align: center;
+	width: 75%;
+	margin-left: 10%;
 }
 
 .references li {
-	background-color: #a2a2a2;
 	font-size: large;
 }
 
@@ -215,11 +214,27 @@ a{
 	font-family: 'Poppins', sans-serif;
 }
 
+.references ol a {
+	text-decoration: none;
+	color: #000000;
+	font-size: large;
+}
+
+.references i {
+	color: #427D9D;
+}
+
+.references i:hover {
+	opacity: 0.8;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+
 /* ================================= 
   For fancy links
 ==================================== */
 
-a {
+/* a {
 	overflow: hidden;
 	position: relative;
 	display: inline-block;
@@ -260,7 +275,7 @@ a span {
   
 a:hover span {
 	transform: translate3d(-200%, 0, 0);
-}
+} */
 
 
 

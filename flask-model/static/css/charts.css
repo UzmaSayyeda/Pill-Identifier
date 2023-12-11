@@ -70,10 +70,10 @@ a{
 }
 
 h1, h2 {
+	color: white;
     font-size: 30px;
     background-color: #427D9D;
     border-radius: 12px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     padding: 15px;
     width: fit-content;
     margin: auto;
