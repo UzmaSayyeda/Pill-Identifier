@@ -99,8 +99,10 @@ a {
     border: none;
 } */
 
-script {
+/* Pill Info */
+p {
     text-decoration: none;
+	text-align: left;
 	font-size: 20px;
 	font-family: 'Poppins', sans-serif;
 	color: white;
@@ -108,7 +110,7 @@ script {
 
 
 /* footer */
-.footer {
+.footer p {
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -118,7 +120,7 @@ script {
 	opacity: 0.5;
 	text-align: center;
 	font-size: 12px;
- }
+}
 
  /* ================================= 
   For fancy links
