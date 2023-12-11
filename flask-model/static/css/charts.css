@@ -1,6 +1,7 @@
 html{
 	scroll-behavior: smooth;
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
+    /* background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)); */
+	background: white;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -70,7 +71,7 @@ a{
 
 h1, h2 {
     font-size: 30px;
-    background-color: #5F6F52;
+    background-color: #427D9D;
     border-radius: 12px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     padding: 15px;
