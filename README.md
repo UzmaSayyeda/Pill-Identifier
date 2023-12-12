@@ -2,7 +2,7 @@
 The purpose of this project is to create an imaging tool that will be used to identify different types of pills
 
 # Using Machine Learning to Identify Pills
-![Pills](<flask-model/static/images/bg2.jpg>)
+![Pills](flask-app/static/images/bg2.jpg)
 
 # Table of Contents
 
@@ -115,7 +115,7 @@ at a ratio=(.8, 0.1,0.1)
 
 ## Exploratory Data Analysis
 
-![EDA Header](<flask-model/static/images/pills1234.JPG>)
+![EDA Header](<flask-app/static/images/pills1234.JPG>)
 
 * [Jupyter Notebook Code for EDA](<flask-model/optimization_models.ipynb>) 
 
@@ -270,3 +270,4 @@ EfficientNetV2B0 is a variant of the EfficientNet family of neural network archi
 * [GitHub #1](https://github.com/jnliou/project4)
 * [Github #2](https://github.com/alphiephalphie/RxVision)
 * [Model Optimization](https://towardsdatascience.com/deep-learning-model-training-loop-e41055a24b73) 
+* [Stack ovwerflow](https://stackoverflow.com/)
