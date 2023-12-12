@@ -39,9 +39,9 @@ html{
     text-decoration: none;
 }
 
-#nav a:hover {
+/* #nav a:hover {
 	color: #718daa;
-}
+} */
 
 #header {
 	padding-top: .5em;
@@ -192,7 +192,7 @@ html{
 	box-sizing: border-box;
 	align-items: center;
 	text-align: center;
-	width: 75%;
+	width: 80%;
 	margin-left: 10%;
 }
 
@@ -202,7 +202,7 @@ html{
 
 /* footer */
 .footer {
-	position: fixed;
+	position: bottom;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -234,15 +234,15 @@ html{
   For fancy links
 ==================================== */
 
-/* a {
+a {
 	overflow: hidden;
 	position: relative;
 	display: inline-block;
-  }
+}
   
 a::before,
 a::after {
-   content: '';
+    content: '';
 	position: absolute;
 	width: 100%;
 	left: 0;
@@ -252,30 +252,29 @@ a::before {
 	background-color: #000000;
 	height: 2px;
 	bottom: 0;
-	transform-origin: 100% 50%;
+	transform-origin: 50% 50%;
 	transform: scaleX(0);
 	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
-a::after {
+
+/* a::after {
+	content: attr(data-replace);
+	height: 100%;
+	top: 0;
+	transform-origin: 50% 50%;
+	transform: translate3d(200%, 0, 0);
+	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+	color: #000000;
+} */
+
+a:hover::before {
+	transform-origin: 50% 50%;
+	transform: scaleX(0.7);
+}
+  
+a:hover::after {
 	width: 100%;
 }
-  
-a:hover::before {
-	transform-origin: 0% 50%;
-	transform: scaleX(1);
-}
-a:hover::after {
-	transform: translate3d(0, 0, 0);
-}
-  
-a span {
-	display: inline-block;
-	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-}
-  
-a:hover span {
-	transform: translate3d(-200%, 0, 0);
-} */
 
 
 
