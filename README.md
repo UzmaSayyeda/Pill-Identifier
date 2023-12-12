@@ -1,6 +1,8 @@
 # Pill-Identifier
 The purpose of this project is to create an imaging tool that will be used to identify different types of pills
 
+View our information website [here](https://uzmasayyeda.github.io/credits/) 
+
 # Using Machine Learning to Identify Pills
 ![Pills](flask-app/static/images/bg2.jpg)
 
