@@ -1,5 +1,5 @@
 # Pill-Identifier
-The purpose of this project is to create an imaging tool that will be used to identify different types of pills
+The purpose of this project is to create an imaging tool that will be used to identify different types of pills.
 
 # Using Machine Learning to Identify Pills
 ![Pills](<flask-model/static/images/bg2.jpg>)
