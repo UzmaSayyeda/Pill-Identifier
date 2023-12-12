@@ -83,7 +83,9 @@ The primary goal of this project is to utilize machine learning to analyze and i
 * Slack 
 
 ## Dataset used:
-* Downloadable from: [NIH Pill Images Database](https://www.nlm.nih.gov/databases/download/pill_image.html)
+* Downloadable from: 
+[NIH Pill Images Database](https://www.nlm.nih.gov/databases/download/pill_image.html)
+[Kaggle Drug Side Effects](https://www.kaggle.com/datasets/jithinanievarghese/drugs-side-effects-and-medical-condition)
  
 
 ## Project Management:
