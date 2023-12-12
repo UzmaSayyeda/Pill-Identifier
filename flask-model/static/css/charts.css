@@ -1,6 +1,5 @@
 html{
 	scroll-behavior: smooth;
-    /* background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)); */
 	background: white;
     background-size: cover;
     background-attachment: fixed;
@@ -47,19 +46,21 @@ a{
 	font-family: 'Poppins', sans-serif;
 }
 
-/* #nav a:hover {
-	color: #718daa;
-} */
 
 .logo img{
 	text-align: center;
+	justify-content: center;
+}
+img {
+	
+	justify-content: center;
 }
 
 #header {
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
-	background-color: #797777;
+	background-color: #427D9D;
 	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
