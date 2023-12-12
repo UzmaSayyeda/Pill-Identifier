@@ -1,0 +1,17 @@
+To activate the app.py file:
+
+Right-click the top right "Play" arrow and then right-click the link that dispalys in the Terminal: http://127.0.0.1:5000.
+Otherwise, on the top left corner of VS code, select Terminal, "New Terminal" and enter in the line provided, "python app.py" into the Terminal and then right-click the link http://127.0.0.1:5000. 
+From that point, the user will see the Home screen and if the "Let's go" button is right-clicked it will redirect the user to the Predict page.
+If the user selects the link labeled "Chart", the user will be taken to our Chart page which includes charts such as: Training & Validation and SQLite. 
+After that, the user should right-click the link labeled "Predict", now the user can choose one file to upload from our local_drug_directory file. 
+To find this file please refer to this guide: Pill-Identifier>flask_model>models>local_drug_directory.
+Now the user can open any of the pill files listed and choose any of the images provided.
+Once the name of the file appears next to the "Choose files" icon on the Predict page please right-click "Submit". 
+The user will then recieve an alert with instructions stating "Hit Recognize for results!". 
+Then the user should right-click the "OK" button on the alert meesage.
+Please allow 1 to 2 seconds to pass before right-clicking "Submit", this allows  the image to be uploaded into the "upload" folder.
+Then right-click the "Recognize" button. 
+Now the user's image will display on a "Results" page with the chosen pill's name, uses and possible side effects.
+Lastly, the user can right-click the link labeled "Credits" to see the Github repositories and LinkedIn profiles of the team members involved in this project, as well as a project overview and references. 
+If the user wishes to return to the homepage at any point, right-click the link labeled "Home" or the link labeled "THE PILL DETECTIVE". 
