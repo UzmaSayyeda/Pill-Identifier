@@ -2,7 +2,7 @@ To activate the app.py file:
 
 Right-click the top right "Play" arrow and then right-click the link that dispalys in the Terminal: http://127.0.0.1:5000.
 Otherwise, on the top left corner of VS code, select Terminal, "New Terminal" and enter in the line provided, "python app.py" into the Terminal and then right-click the link http://127.0.0.1:5000. 
-From that point, the user will see the Home screen. 
+From that point, the user will see the Home screen and if the "Let's go" button is right-clicked it will redirect the user to the Predict page.
 If the user selects the link labeled "Chart", the user will be taken to our Chart page which includes charts such as: Training & Validation and SQLite. 
 After that, the user should right-click the link labeled "Predict", now the user can choose one file to upload from our local_drug_directory file. 
 To find this file please refer to this guide: Pill-Identifier>flask_model>models>local_drug_directory.
