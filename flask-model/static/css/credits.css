@@ -240,7 +240,7 @@ a {
 	display: inline-block;
 }
   
-a::before,
+#nav a::before,
 a::after {
     content: '';
 	position: absolute;
