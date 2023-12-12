@@ -1,0 +1,10 @@
+click==8.1.7
+Flask==3.0.0
+Flask_Cors==4.0.0
+keras==2.14.0
+numpy==1.26.2
+pandas==2.1.4
+SQLAlchemy==2.0.23
+tensorflow==2.14.0
+tensorflow_intel==2.14.0
+Werkzeug==3.0.1

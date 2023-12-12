@@ -1,7 +1,9 @@
+# imports
 from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
 import sqlalchemy as sql
 
+import pandas as pd
 import math
 import os
 import numpy as np
@@ -18,9 +20,11 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
 CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
+# paths for sqlite 
 db_url = 'sqlite:///drugs.db'
 engine = sql.create_engine(db_url)
 
+# path for upload folder to store images
 UPLOAD_FOLDER = 'static/upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -51,32 +55,38 @@ label = ['Amoxicillin 500 mg',
 
 # Loading the best saved model to make predictions.
 tf.keras.backend.clear_session()
-model = tf.keras.models.load_model('MobileNet_02.keras')
+model = tf.keras.models.load_model('MobileNet.keras')
 print('model successfully loaded!')
 
 start = 0
 passed = 0
 num = 0
 
- 
-db_url = 'sqlite:///drugs.db'
-engine = sql.create_engine(db_url)
-
+# app.routes
 @app.route("/")
 @app.route("/home")
 def index():
     return render_template('home.html')
 
+# for api+sql based plotly charts
 @app.route("/data")
 def get_data():
-     
     conn = sqlite3.connect("drugs.db")
     cursor = conn.cursor()
     query = "SELECT * FROM drug_effects"
-    data = cursor.execute(query).fetchall()
-    conn.close()
-    return jsonify(data)
+    data_two = cursor.execute(query).fetchall()
 
+
+    drug_data = []
+    for row in data_two:
+        row_dict = {}
+        for i, column in enumerate(cursor.description):
+            row_dict[column[0]] = row[i]
+        drug_data.append(row_dict)
+
+    conn.close()
+    return jsonify(drug_data)
+                
 @app.route("/predict")
 def predict():
     return render_template('predict.html')
@@ -89,7 +99,7 @@ def chart():
 def credit():
     return render_template('credits.html')
 
-
+# saves images to upload folder to predict
 @app.route('/upload', methods=['POST'])
 def upload():
     file = request.files.getlist("img")
@@ -103,6 +113,7 @@ def upload():
     
     return render_template('predict.html', img=file)
 
+# predict function
 @app.route('/results')
 def results():
     
@@ -115,12 +126,14 @@ def results():
         pa = dict()
         x = dict()
 
+        # preprocess the predict image
         filename = f'{UPLOAD_FOLDER}/{i + 500}.jpg'
         print('image filepath', filename)
         pred_img = image.load_img(filename, target_size=(224, 224))
         pred_img = image.img_to_array(pred_img)
         pred_img = np.expand_dims(pred_img, axis=0) / 255.
 
+        # passing it to model to predict
         pred = model.predict(pred_img)
         print("Pred")
         print(pred)
@@ -132,6 +145,7 @@ def results():
             # Arbitrarily set to list of probabilities. Should probably reset to reflect training data
             pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
+        # sorting the results
         top = pred.argsort()[0][-3:]
         
         _true = label[top[2]]
@@ -155,9 +169,9 @@ def results():
 
 @app.route('/update', methods=['POST'])
 def update():
-    return render_template('home.html', img='static/P2.jpg')
+    return render_template('home.html')
 
-
+# clears out upload after quitting the app
 def clearUpload(exception=None):
     global UPLOAD_FOLDER
     shutil.rmtree(UPLOAD_FOLDER)
@@ -175,18 +189,7 @@ if __name__ == "__main__":
     @click.argument('HOST', default='127.0.0.1')
     @click.argument('PORT', default=5000, type=int)
     def run(debug, threaded, host, port):
-        """
-        This function handles command line parameters.
-        Run the server using
-            python server.py
-        Show the help text using
-            python server.py --help
-        """
+      
         HOST, PORT = host, port
         app.run(host=HOST, port=PORT, debug=debug, threaded=threaded)
     run()
-    
-    
-    
-
-    

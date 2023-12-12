@@ -5,38 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charts</title>
     <link rel="stylesheet" href="../static/css/charts.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../static/js/index.js"></script>
 </head>
 <body>
     <!-- nav bar start -->
     <div id = "header">
         <div class="logo">
             <img src="../static/images/Pill Logo 1.png" width="50" height="50">
-            <a href="#">The Pill Detective</a>
+            <a href="{{ url_for('index')}}">The Pill Detective</a>
         </div>
             <div id="nav">
                 <a href="{{ url_for('index')}}">Home</a>
                 <a href="{{ url_for('predict')}}">Predict</a>
                 <a href="{{ url_for('credit')}}">Credits</a>
+            </div>
         </div>
 
     </div>
     
     <hr>
-
+    
     <!-- nav bar end -->
-    <!-- chart starts -->
-    <div class="conatiner">
-      
-        <div class="item">
-            <!-- <h1>Training Loss</h1> -->
-            <img src="../static/images/loss.png" >
-        </div>   
-        <div class="item">
-            <!-- <h1>Training Accuracy</h1> -->
-            <img src="../static/images/accuracy.png" >
+
+    <!-- charts start -->
+
+    <h1 style=>Training and Validation Charts</h1>
+    
+    <div class="row">
+        <div class="column">
+            <img src="../static/images/loss.png" alt="loss" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="../static/images/accuracy.png" alt="accuracy" style="width:100%">
         </div>
     </div>
-    <div class="plotly-charts"></div>
-    <!-- chart ends -->
+
+    <br>
+
+    <h2>SQLite Charts</h2>
+
+    
+    <div id="view-1"></div>
+    <br>
+    <div id="view-2"></div>
+    <br>
+    <div id="view-3"></div>
+
+    <!-- charts end -->
+    
+    <!-- footer -->
+    <div class="footer">
+        <p>Capstone Project for SMU Data Analytics Boot Camp.</p>
+        <p>©2023, All Rights Reserved.</p>
+    </div>
+   
 </body>
 </html>

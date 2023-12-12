@@ -12,7 +12,7 @@
     <div id="header">
         <div class="logo">
             <img src="../static/images/Pill Logo 1.png" width="50" height="50">
-            <a href="#">The Pill Detective</a>
+            <a href="{{ url_for('index')}}">The Pill Detective</a>
         </div>
 
             <div id="nav">
@@ -61,7 +61,7 @@
 
         <script>
             var prediction = "{{ prediction }}";
-          </script>
+        </script>
 
 
         <script src="../static/js/results.js"></script>
@@ -69,5 +69,16 @@
 
         </div>
     </div>
-    
+    <hr>
+    <br>
+    <br>
+    <br>
+
+    <!-- footer -->
+    <div class="footer">
+        <p>Capstone Project for SMU Data Analytics Boot Camp.</p>
+        <p>©2023, All Rights Reserved.</p>
+    </div>
+
+</body>   
 </html>
