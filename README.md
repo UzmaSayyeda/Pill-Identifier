@@ -1,5 +1,5 @@
 # Pill-Identifier
-The purpose of this project is to create an imaging tool that will be used to identify different types of pills
+The purpose of this project is to create an imaging tool that will be used to identify different types of pills.
 
 # Using Machine Learning to Identify Pills
 ![Pills](<flask-model/static/images/bg2.jpg>)
@@ -263,8 +263,10 @@ EfficientNetV2B0 is a variant of the EfficientNet family of neural network archi
 
 * By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
  
+
 ##### References
 * [Research paper](https://www.jmir.org/2023/1/e41043)
 * [GitHub #1](https://github.com/jnliou/project4)
 * [Github #2](https://github.com/alphiephalphie/RxVision)
 * [Model Optimization](https://towardsdatascience.com/deep-learning-model-training-loop-e41055a24b73) 
+
