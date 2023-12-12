@@ -66,7 +66,7 @@ The primary goal of this project is to utilize machine learning to analyze and i
 ## Programs Utilized:
 
 ### Backend 
-* Python: Matplotlib, Numpy, Pandas, Sklearn, Tensorflow, PIL, OS, boto3, Keras, Random, CV2, SplitFolders
+* Python: Matplotlib, Numpy, Pandas, Tensorflow, OS, boto3, Keras, Random, CV2, SplitFolders
 * Flask
 * SQLite
 * S3.Bucket
