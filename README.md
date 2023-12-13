@@ -32,16 +32,15 @@ View our information website [here](https://uzmasayyeda.github.io/credits/)
    3. [Styling & Fonts](#styling--fonts)
    4. [Backend & Storage](#backend--storage)
    5. [User Interaction](#user-interaction)
-4. [Presentation](#presentation)
-5. [References](#references)
+4. [References](#references)
 
 
-## Pill Image recognition with Machine Learning
+## Pill Image Recognition with Machine Learning
 
 
 ## Introduction
 
-The primary goal of this project is to utilize machine learning to analyze and identify pill images based off image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by people in the medical profession as well as anyone who has to take medications regularly to help identify medications.
+The primary goal of this project is to utilize machine learning to analyze and identify pill images based on image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine-learning model. This application is designed for use by people in the medical profession as well as anyone who has to take medications regularly to help identify medications.
 
 ## Why?
 
@@ -92,7 +91,7 @@ The primary goal of this project is to utilize machine learning to analyze and i
 
 ## Project Management:
 
-We utilized a private canvas inside of Slack to organize the project management and timeline for individual and group tasks.
+We utilized a private canvas inside Slack to organize the project management and timeline for individual and group tasks.
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -108,7 +107,7 @@ where they were organized into 23 separate classifications.
 #### Notes on the Data Cleaning/Preprocessing Process
 * For this model we utilized an S3 bucket for data storage. 
 * We downloaded the image files from the bucket and selected which consisted of 552 files
-* In Python using the splitfolders function we then split that into a training dataset and a validation dataset
+* In Python using the split folders function we then split that into a training dataset and a validation dataset
 at a ratio=(.8, 0.1,0.1)
 * We preprocessed and scaled the images to 224/224
 * The training directory used 437 images belonging to 23 classes
