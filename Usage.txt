@@ -1,7 +1,16 @@
+*** Attention: This project utuilizes python scripts, many of which were created in Jupyter notebook. While a lot of the coding was done in VS code and can be operated from there, we strongly recommend that users download Jupyter notebook to operate ipynb files.
+
+*** Attention: access keys are required to operate this project, please contact one of the team members for the config.py file.
+
 To activate the app.py file:
 
+First, the user should open Gitbash and switch to the environment where they wish to clone the repository.
+Then, go to the project's repository on Github, select "Code" and copy the link from the repository. 
+After that, go back to Gitbash and type "git clone" and then paste the URL of the Github repository. 
+Next, drag the project folder to VS code and once it is there, navigate to the top left corner of VS code.
+Select Terminal, "New Terminal" and change the directory by changing the directory to flask-app with the line provided: "cd flask-app".
 Right-click the top right "Play" arrow and then right-click the link that dispalys in the Terminal: http://127.0.0.1:5000.
-Otherwise, on the top left corner of VS code, select Terminal, "New Terminal" and enter in the line provided, "python app.py" into the Terminal and then right-click the link http://127.0.0.1:5000. 
+Otherwise, if the user news to open Terminal: on the top left corner of VS code, select Terminal, "New Terminal" and enter in the line provided, "python app.py" into the Terminal and then right-click the link http://127.0.0.1:5000. 
 From that point, the user will see the Home screen and if the "Let's go" button is right-clicked it will redirect the user to the Predict page.
 If the user selects the link labeled "Chart", the user will be taken to our Chart page which includes charts such as: Training & Validation and SQLite. 
 After that, the user should right-click the link labeled "Predict", now the user can choose one file to upload from our local_drug_directory file. 
@@ -15,3 +24,7 @@ Then right-click the "Recognize" button.
 Now the user's image will display on a "Results" page with the chosen pill's name, uses and possible side effects.
 Lastly, the user can right-click the link labeled "Credits" to see the Github repositories and LinkedIn profiles of the team members involved in this project, as well as a project overview and references. 
 If the user wishes to return to the homepage at any point, right-click the link labeled "Home" or the link labeled "THE PILL DETECTIVE". 
+
+Please contact members of the team if you have any questions. 
+
+
