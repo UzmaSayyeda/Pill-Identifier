@@ -1,7 +1,7 @@
 # Pill-Identifier
-The purpose of this project is to create an imaging tool that will be used to identify different types of pills
+The purpose of this project is to create an imaging tool that will be used to identify different types of pills.
 
-View our information website [here](https://uzmasayyeda.github.io/credits/) 
+View our information website [here](https://uzmasayyeda.github.io/credits/).
 
 # Using Machine Learning to Identify Pills
 ![Pills](flask-app/static/images/bg2.jpg)
@@ -105,7 +105,7 @@ where they were organized into 23 separate classifications.
 
 
 #### Notes on the Data Cleaning/Preprocessing Process
-* For this model we utilized an S3 bucket for data storage. 
+* For this model we utilized an S3 bucket for data storage
 * We downloaded the image files from the bucket and selected which consisted of 552 files
 * In Python using the split folders function we then split that into a training dataset and a validation dataset
 at a ratio=(.8, 0.1,0.1)
