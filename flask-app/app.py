@@ -142,7 +142,6 @@ def results():
         if math.isnan(pred[0][0]) and math.isnan(pred[0][1]) and \
                 math.isnan(pred[0][2]) and math.isnan(pred[0][3]):
                     
-            # Arbitrarily set to list of probabilities. Should probably reset to reflect training data
             pred = np.array([0.05, 0.05, 0.05, 0.07, 0.09, 0.19, 0.55, 0.0, 0.0, 0.0, 0.0])
 
         # sorting the results
