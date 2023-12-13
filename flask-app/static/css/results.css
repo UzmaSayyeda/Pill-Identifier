@@ -67,10 +67,6 @@ a {
     text-decoration: none;
 }
 
-/* #nav a:hover {
-	color: #718daa;
-} */
-
 
 #header {
 	padding-top: .5em;
@@ -85,19 +81,7 @@ a {
 	border-radius: 5px;
 }
 
-/* style for the printed results */
-/* h2{
-	font-size: 1.5em;
-	background-color: #427D9D;
-    border-radius: 12px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    padding: 10px;
-    width: fit-content;
-    margin: auto;
-    margin-bottom: 5px;
-	margin-top: 15px;
-    border: none;
-} */
+
 
 /* Pill Info */
 p {
@@ -115,7 +99,6 @@ p {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	/* background-color: white; */
 	color: black;
 	opacity: 0.5;
 	text-align: center;
@@ -148,16 +131,6 @@ a::before {
 	transform: scaleX(0);
 	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
-
-/* a::after {
-	content: attr(data-replace);
-	height: 100%;
-	top: 0;
-	transform-origin: 50% 50%;
-	transform: translate3d(200%, 0, 0);
-	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-	color: #000000;
-} */
 
 a:hover::before {
 	transform-origin: 50% 50%;

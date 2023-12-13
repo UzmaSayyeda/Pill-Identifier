@@ -9,14 +9,6 @@ html{
 	background-attachment: fixed;
 }
 
-/* adds background image */
-/* body{
-   
-	
-} */
-
-
-/*  nav bar styling */
 
 #nav{
     display: flex;
@@ -55,12 +47,6 @@ a{
 	color: white;
 	font-size: 1.5em;
 }
-
-/* #nav a:hover {
-	color: #718daa;
-} */
-
-
 
 #header {
 	padding-top: .5em;

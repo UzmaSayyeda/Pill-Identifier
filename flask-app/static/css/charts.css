@@ -19,7 +19,7 @@ html{
 a{
     text-decoration: none;
     color: white;
-    /*font-size: large*/;
+    
 }
 
 .logo {
@@ -153,15 +153,6 @@ a::before {
 	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-/* a::after {
-	content: attr(data-replace);
-	height: 100%;
-	top: 0;
-	transform-origin: 50% 50%;
-	transform: translate3d(200%, 0, 0);
-	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-	color: #000000;
-} */
 
 a:hover::before {
 	transform-origin: 50% 50%;

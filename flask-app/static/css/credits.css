@@ -39,9 +39,6 @@ html{
     text-decoration: none;
 }
 
-/* #nav a:hover {
-	color: #718daa;
-} */
 
 #header {
 	padding-top: .5em;
@@ -138,7 +135,6 @@ html{
 
 .items:hover {
 	transform: scale(1.1);
-	/* background: rgba(225,225,225,0.61); */
 	background: rgb(82, 155, 195, 0.61);
 	color: #000000;
 	border-radius: 12px;
@@ -257,15 +253,6 @@ a::before {
 	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-/* a::after {
-	content: attr(data-replace);
-	height: 100%;
-	top: 0;
-	transform-origin: 50% 50%;
-	transform: translate3d(200%, 0, 0);
-	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-	color: #000000;
-} */
 
 a:hover::before {
 	transform-origin: 50% 50%;
