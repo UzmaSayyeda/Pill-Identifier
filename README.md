@@ -1,8 +1,10 @@
 # Pill-Identifier
-The purpose of this project is to create an imaging tool that will be used to identify different types of pills
+The purpose of this project is to create an imaging tool that will be used to identify different types of pills.
+
+View our information website [here](https://uzmasayyeda.github.io/credits/).
 
 # Using Machine Learning to Identify Pills
-![Pills](<flask-model/static/images/bg2.jpg>)
+![Pills](flask-app/static/images/bg2.jpg)
 
 # Table of Contents
 
@@ -30,16 +32,15 @@ The purpose of this project is to create an imaging tool that will be used to id
    3. [Styling & Fonts](#styling--fonts)
    4. [Backend & Storage](#backend--storage)
    5. [User Interaction](#user-interaction)
-4. [Presentation](#presentation)
-5. [References](#references)
+4. [References](#references)
 
 
-## Pill Image recognition with Machine Learning
+## Pill Image Recognition with Machine Learning
 
 
 ## Introduction
 
-The primary goal of this project is to utilize machine learning to analyze and identify pill images based off image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by people in the medical profession as well as anyone who has to take medications regularly to help identify medications.
+The primary goal of this project is to utilize machine learning to analyze and identify pill images based on image files submitted by a user to our web application. To achieve this objective, we have developed a web application that integrates an optimized machine-learning model. This application is designed for use by people in the medical profession as well as anyone who has to take medications regularly to help identify medications.
 
 ## Why?
 
@@ -90,13 +91,13 @@ The primary goal of this project is to utilize machine learning to analyze and i
 
 ## Project Management:
 
-We utilized a private canvas inside of slack to organize the project management and timeline for individual and group task.
+We utilized a private canvas inside Slack to organize the project management and timeline for individual and group tasks.
 
 ## Data Cleaning and Exploratory Data Analysis
 
 - The image files were downloaded from our S3 bucket into our local environment
-where they were organized into 23 seperate classifications.
-- The images were then displayed an inspected to make sure they were in the proper format.
+where they were organized into 23 separate classifications.
+- The images were then displayed and inspected to make sure they were in the proper format.
 - They were then preprocessed and all resized to 224,224 to ensure consistency before being passed into the model.
 
 ### Data Preprocessing 
@@ -104,18 +105,18 @@ where they were organized into 23 seperate classifications.
 
 
 #### Notes on the Data Cleaning/Preprocessing Process
-* For this model we utilized an S3 bucket for data storage. 
+* For this model we utilized an S3 bucket for data storage
 * We downloaded the image files from the bucket and selected which consisted of 552 files
-* In Pyton using the splitfolders function we then split that into a training dataset and a validation dataset
+* In Python using the split folders function we then split that into a training dataset and a validation dataset
 at a ratio=(.8, 0.1,0.1)
-* We preproccessed and scaled the images to 224/224
+* We preprocessed and scaled the images to 224/224
 * The training directory used 437 images belonging to 23 classes
 * The validation directory used 46 images belonging to 23 classes
 
 
 ## Exploratory Data Analysis
 
-![EDA Header](<flask-model/static/images/pills1234.JPG>)
+![EDA Header](<flask-app/static/images/pills1234.JPG>)
 
 * [Jupyter Notebook Code for EDA](<flask-model/optimization_models.ipynb>) 
 
@@ -180,14 +181,14 @@ We tried a few different machine learning models to figure out the best accuracy
   - Validation Split: 20% of the training data was used for validation during training to monitor model performance.
 
 - **Model Summary:**
-    - Model architecture with detailed layer information for top model.
+    - Model architecture with detailed layer information for the top model.
     - Total parameters: 14,726,847 (56.18 MB)
     - Trainable parameters: 11,799 (46.09 KB)
     - Non-trainable parameters: 14,714,688 (56.13 MB)
 
 **A) [VGG16](<flask-model/optimization_models.ipynb>):**
 
-The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolutional neural network (CNN) architecture designed for image classification. It consists of 16 layers, including 13 convolutional layers and 3 fully connected layers. Our model was designed predicting the correct medication name an dosage based off an image of the medication. It constructs a new neural network model using the Sequential API from Keras, where the base model is added as the first layer, followed by a Global Average Pooling layer, and finally, a Dense layer with 23 units and softmax activation for multi-class classification.
+The first model we used was VGG16 (Visual Geometry Group 16). VGG16 is a convolutional neural network (CNN) architecture designed for image classification. It consists of 16 layers, including 13 convolutional layers and 3 fully connected layers. Our model was designed to predict the correct medication name and dosage based on an image of the medication. It constructs a new neural network model using the Sequential API from Keras, where the base model is added as the first layer, followed by a Global Average Pooling layer, and finally, a Dense layer with 23 units and softmax activation for multi-class classification.
 
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
@@ -199,7 +200,7 @@ The ResNet-50 (Residual Network with 50 layers) is a convolutional neural networ
 
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
-    - Accuracy: For base model was 8%. This Model performed the worst.
+    - Accuracy: For the base model was 8%. This Model performed the worst.
 
 
 **C) [MobileNet](<flask-model/optimization_models.ipynb>):**
@@ -208,7 +209,7 @@ MobileNet is a family of lightweight neural network architectures designed for m
  
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
-  - Accuracy for MobilNet model was 100%. It was the best performing model.
+  - Accuracy for MobilNet model was 100%. It was the best-performing model.
 
 
 **D) [DenseNet121](<flask-model/optimization_models.ipynb>):**
@@ -225,7 +226,7 @@ EfficientNetV2B0 is a variant of the EfficientNet family of neural network archi
 
 - **Model Evaluation:**
   - The model's performance was evaluated using common binary classification metrics, including:
-  - Accuracy for DenseNet121 model was 4%. with a loss of 3.39. This model performed poorly and is not suitable for use to acccomplish the task.
+  - Accuracy for DenseNet121 model was 4%. with a loss of 3.39. This model performed poorly and is not suitable for use to accomplish the task.
         
 ## FLASK
 ### Key Libraries Used:
@@ -270,3 +271,4 @@ EfficientNetV2B0 is a variant of the EfficientNet family of neural network archi
 * [GitHub #1](https://github.com/jnliou/project4)
 * [Github #2](https://github.com/alphiephalphie/RxVision)
 * [Model Optimization](https://towardsdatascience.com/deep-learning-model-training-loop-e41055a24b73) 
+* [Stack overflow](https://stackoverflow.com/)
